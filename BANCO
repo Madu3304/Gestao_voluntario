@@ -1,0 +1,42 @@
+create database GestaoVoluntarios;
+
+use GestaoVoluntarios;
+
+create table Estado(
+    -> Cd_estado int primary key auto_increment,
+    -> Ds_Estado varchar(100));
+
+create table Cidade(
+    -> Cod_cidade int primary key auto_increment,
+    -> Ds_Cidade varchar(100),
+    -> Cd_estado int,
+    -> Foreign key(Cd_estado) references Estado(Cd_estado));
+
+create table Voluntario(
+    -> Cd_Voluntario int primary key auto_increment,
+    -> Nm_Voluntario varchar(255),
+    -> email varchar(255),
+    -> endereco varchar(255),
+    -> ie_cancelado varchar(255),
+    -> dt_cancelado date);
+
+
+CREATE TABLE eventos(
+    ->     Cd_Eventos INT PRIMARY KEY AUTO_INCREMENT,
+    ->     dt_evento DATE,
+    ->     ds_evento VARCHAR(255),
+    ->     cd_estado INT,
+    ->     cd_cidade INT,
+    ->     tp_projeto VARCHAR(255),
+    ->     FOREIGN KEY(cd_estado) REFERENCES Estado(Cd_estado),
+    ->     FOREIGN KEY(cd_cidade) REFERENCES Cidade(Cod_cidade)
+    -> );
+
+
+create table voluntario_evento(
+    -> dt_cadastro date,
+    -> cd_estado int,
+    -> cd_cidade int,
+    -> primary key (cd_estado, cd_cidade),
+    -> foreign key (cd_estado) references Estado(Cd_estado),
+    -> foreign key (cd_cidade) references Cidade(Cod_cidade));
