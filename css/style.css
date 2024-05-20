@@ -1,0 +1,65 @@
+body {
+    font-family: "Ubuntu", sans-serif;
+  }
+  
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-image:linear-gradient(to bottom ,#F8DC5F,#F6CC3A);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+
+.sidenav img {
+    margin-right: 10px; 
+    width: 30px; 
+    height: 30px; 
+    margin-top: 0%; 
+}
+
+.logo {
+    height: 700px; 
+    width: 700px; 
+    margin: 0;
+}
+
+.linha {
+    height: 1.6px;
+    background-color: white;
+    margin: 0 auto;
+    width: 80% ;
+}
+
+.main {
+    margin-left: 200px;
+  }
+
+#main {
+    margin-left: 200px; 
+    padding: 20px;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    text-decoration: none;
+  }
+
+  /*Com essa regra, o menu ajusta seu padding e o tamanho da fonte dos links, tornando a navegação mais fácil e o layout mais adaptado à tela pequena.*/
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
