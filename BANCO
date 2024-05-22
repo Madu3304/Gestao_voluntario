@@ -44,7 +44,7 @@ create table Voluntario_Evento(
 create table Usuario(
     cd_usuario int PRIMARY KEY AUTO_INCREMENT,
     dt_cadastro DATETIME,
-    email varchar(255),
-    senha varchar(255),
-    tp_permissao CHAR(1)
+    email VARCHAR(255),
+    senha VARCHAR(255),
+    tp_permissao INT
 )
