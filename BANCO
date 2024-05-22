@@ -42,9 +42,8 @@ create table Voluntario_Evento(
     -> foreign key (cd_cidade) references Cidade(Cod_cidade));
 
 create table Usuario(
-    cd_usuario int PRIMARY KEY AUTO_INCREMENT,
-    dt_cadastro DATETIME,
-    email VARCHAR(255),
-    senha VARCHAR(255),
-    tp_permissao INT
-)
+    -> cd_usuario int PRIMARY KEY AUTO_INCREMENT,
+    -> dt_cadastro DATETIME,
+    -> email VARCHAR(255),
+    -> senha VARCHAR(255),
+    -> tp_permissao INT);
