@@ -2,7 +2,7 @@ import Sequelize from "sequelize";
 import sequelize from "../config/connection.js";
 
 const Voluntario = sequelize.define('voluntario',{
-    cd_estado:{
+    cd_voluntario:{
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,

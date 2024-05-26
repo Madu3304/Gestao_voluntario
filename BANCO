@@ -35,11 +35,11 @@ CREATE TABLE Eventos(
 
 create table Voluntario_Evento(
     -> dt_cadastro date,
-    -> cd_estado int,
-    -> cd_cidade int,
-    -> primary key (cd_estado, cd_cidade),
-    -> foreign key (cd_estado) references Estado(Cd_estado),
-    -> foreign key (cd_cidade) references Cidade(Cod_cidade));
+    -> cd_voluntario int,
+    -> cd_evento int,
+    -> primary key (cd_voluntario, cd_evento),
+    -> foreign key (cd_voluntario) references Voluntario(cd_voluntario),
+    -> foreign key (cd_evento) references Evento(cd_evento));
 
 create table Usuario(
     -> cd_usuario int PRIMARY KEY AUTO_INCREMENT,

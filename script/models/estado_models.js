@@ -3,7 +3,7 @@ import sequelize from '../config/connection.js';
 
 
 const Estado = sequelize.define('estado',{
-    id_estado:{
+    cd_estado:{
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
