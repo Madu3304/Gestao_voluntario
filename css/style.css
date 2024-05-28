@@ -63,3 +63,81 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+  
+  .container {
+     width: 80%;
+     height: 80vh;
+     display: flex;
+     box-shadow: 5px 10px;
+  }
+
+  .form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: ; */
+    padding: 3rem;
+  }
+
+  .form-hearder {
+   margin-bottom: 3rem;
+   display: flex;
+   justify-content: space-between;
+
+  }
+
+  .login-button{
+    display: flex;
+    align-items: center;
+    transform: translate(-50%, -50%);
+
+  }
+
+  .login-button button{
+    border: none;
+    background-color: #F6CC3A;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .login-button button:hove {
+    background-color: #F8DC5F;
+  }
+
+  .login-button button a {
+    text-decoration: nome;
+    font-weight: 500;
+    color: #f1f1f1;
+  }
+
+  .input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+   }
+
+   .input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
+  }
+
+  .input-box input {
+    margin: 0.6rem 0;
+    padding: 0.8rem 1.2rem;
+    border: nome;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #000;
+  }
+
+  .input-box input:hover {
+    background-color: #eee;
+  }
+
+
+
+
+
