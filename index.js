@@ -1,11 +1,15 @@
+import express from "express"
 import http from 'http';
 import fs from 'fs';
 import valores from './script/server.js';
+import { router as eventoRoutes } from './script/routes/evento_routes.js';
 
-(async () => {
-  console.log(valores.novoEstado)
-  console.log(valores.novoVoluntario)
-})()
+
+
+// (async () => {
+//   console.log(valores.novoEstado)
+//   console.log(valores.novoVoluntario)
+// })()
 
 
 

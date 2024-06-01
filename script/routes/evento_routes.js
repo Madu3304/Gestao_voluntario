@@ -1,16 +1,15 @@
 import express from "express"
+import path from "path"
+import { dirname } from "path"
+import { fileURLToPath } from "url"
 
-import { evento } from "../controller/evento_controller.js"
-
-import Evento from "../models/evento_model.js"
-
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 let router = express.Router()
 
-router.post('/teste', evento.create)
-
-
-
-
+router.get('/evento', (req,res) => {
+    res.sendFile(path.join(__dirname, '../../html', 'evento.html'));
+}) 
 
 export {router}
