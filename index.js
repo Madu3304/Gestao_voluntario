@@ -1,5 +1,5 @@
-var http = require('http');
-var fs = require('fs');
+import http from 'http';
+import fs from 'fs';
 
 http.createServer(function (req, res) {
   fs.readFile('./html/login.html', function(err, data) {
