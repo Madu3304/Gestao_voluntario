@@ -1,5 +1,13 @@
 import http from 'http';
 import fs from 'fs';
+import valores from './script/server.js';
+
+(async () => {
+  console.log(valores.novoEstado)
+  console.log(valores.novoVoluntario)
+})()
+
+
 
 http.createServer(function (req, res) {
   fs.readFile('./html/login.html', function(err, data) {
