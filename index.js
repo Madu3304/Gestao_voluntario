@@ -1,24 +1,24 @@
-import express from "express"
+import express from "express";
 import http from 'http';
 import fs from 'fs';
 import path from "path";
 //import valores from './script/server.js';
-//import { router as agenda1Routes} from "./script/routes/agenda1_routes.js";
 import { router as loginRoutes } from "./script/routes/login_routes.js";
 import { router as eventoRoutes } from './script/routes/evento_routes.js';
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
 
-const server = express()
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const server = express();
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
 
-server.use(express.static(path.join(__dirname, 'html')))
+server.use(express.json());
+server.use(express.urlencoded({extended:true}));
 
-server.use(express.json())
-server.use(express.urlencoded({extended:true}))
+//server.use(express.static(path.join(__dirname, 'html')));
+
 
 // (async () => {
 //   console.log(valores.novoEstado)
@@ -31,6 +31,29 @@ server.use(express.urlencoded({extended:true}))
 server.get("/login", loginRoutes)
 
 server.get("/evento", eventoRoutes)
+
+server.get('/agendaProgramacao', (req,res) => {
+  res.sendFile(path.join(__dirname, 'html', 'agenda_programacao.html'));
+}) 
+
+
+server.get('/cancelamento', (req,res) => {
+  res.sendFile(path.join(__dirname, 'html', 'cancelamento.html'));
+}) 
+
+server.get('/estatistica', (req,res) => {
+  res.sendFile(path.join(__dirname, 'html', 'estatistica.html'));
+}) 
+
+
+server.get('/home', (req,res) => {
+  res.sendFile(path.join(__dirname, 'html', 'home.html'));
+}) 
+
+
+server.get('/voluntario', (req,res) => {
+  res.sendFile(path.join(__dirname, 'html', 'voluntario.html'));
+}) 
 
 
 
