@@ -1,6 +1,11 @@
 body {
     font-family: "Ubuntu", sans-serif;
+    width: 100;
+    height: 100vh;
     justify-content: center;
+    display: flex;
+    align-items: center;
+    
   }
   
 .sidenav {
@@ -13,6 +18,7 @@ body {
     background-image:linear-gradient(to bottom ,#F8DC5F,#F6CC3A);
     overflow-x: hidden;
     padding-top: 20px;
+    justify-content: center;
   }
 
 
@@ -74,6 +80,8 @@ body {
      box-shadow: 5px 5px 10px rgba(0,0,0, .212);
       }
 
+
+      /*ajustes do form*/
   .form {
     width: 50%;
     display: flex;
@@ -84,11 +92,12 @@ body {
     padding: 3rem;
   }
 
+  /*aqui para arrumar o espaço*/
   .form-hearder {
    margin-bottom: 3rem;
    display: flex;
    justify-content: space-between;
-
+  
   }
 
   .login-button{
@@ -96,6 +105,7 @@ body {
     align-items: center;
   }
 
+  /*ajuste botão*/
   .login-button button{
     border: none;
     background-color: #F6CC3A;
@@ -105,7 +115,7 @@ body {
   }
 
   .login-button button:hove {
-    background-color: #F8DC5F;
+    background-color: #ffe881;
   }
 
   .login-button button a {
@@ -114,12 +124,25 @@ body {
     color: #f1f1f1;
   }
 
+  /*ajuste do risco*/
+  .form-hearder h1::after {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: #da4549;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+  }
+
   .input-group {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     padding: 1rem 0;
-   }
+  }
+
 
    .input-box {
     display: flex;
@@ -138,11 +161,14 @@ body {
   .input-box input:hover {
     background-color: #eee;
   }
+  .input-box input:focus-visible {
+    outline: 1px solid #ffe881;
+  }
 
 .input-box label,
 .gender-title h6 {
     font-size: 0.75rem;
-    front-weight:600;
+    font-weight:600;
     color: #000;
 }
 
