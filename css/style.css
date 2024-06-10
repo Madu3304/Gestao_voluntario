@@ -5,7 +5,7 @@ body {
     justify-content: center;
     display: flex;
     align-items: center;
-    
+ 
   }
   
 .sidenav {
@@ -18,7 +18,7 @@ body {
     background-image:linear-gradient(to bottom ,#F8DC5F,#F6CC3A);
     overflow-x: hidden;
     padding-top: 20px;
-    justify-content: center;
+    flex-direction: column;
   }
 
 
@@ -94,9 +94,10 @@ body {
 
   /*aqui para arrumar o espaço*/
   .form-hearder {
-   margin-bottom: 3rem;
+   margin-bottom: 1rem;
    display: flex;
    justify-content: space-between;
+   flex-direction: column;
   
   }
 
@@ -147,7 +148,7 @@ body {
    .input-box {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.1rem;
+    margin-bottom: 1.0rem;
   }
 
   .input-box input {
@@ -174,27 +175,6 @@ body {
 
 .input-box input::placeholder{
     color: #000;
-}
-
-.gender-group {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.62rem;
-  padding: 0 0.5rem;
-}
-
-.gender-input {
-  display: flex;
-  align-items: center;
-}
-.gender-input input {
-  margin-right: 0.35rem;
-}
-
-.gender-input label {
-  font-size: 0.81rem;
-  font-weight: 600;
-  color: #000;
 }
 
 .container-button button {
