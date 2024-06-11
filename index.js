@@ -2,7 +2,7 @@ import express from "express";
 import http from 'http';
 import fs from 'fs';
 import path from "path";
-//import valores from './script/server.js';
+import valores from './script/server.js';
 import { router as loginRoutes } from "./script/routes/login_routes.js";
 import { router as eventoRoutes } from './script/routes/evento_routes.js';
 import { fileURLToPath } from "url";
@@ -15,7 +15,8 @@ const server = express();
 
 
 server.use(express.json());
-server.use(express.urlencoded({extended:true}));
+// server.use(express.urlencoded({extended:false}));
+// server.use(express.static(path.join(__dirname, )))
 
 //server.use(express.static(path.join(__dirname, 'html')));
 
@@ -28,32 +29,32 @@ server.use(express.urlencoded({extended:true}));
 
 
 
-server.get("/login", loginRoutes)
+// server.get("/login", loginRoutes)
 
-server.get("/evento", eventoRoutes)
+// server.get("/evento", eventoRoutes)
 
-server.get('/agendaProgramacao', (req,res) => {
-  res.sendFile(path.join(__dirname, 'html', 'agenda_programacao.html'));
-}) 
-
-
-server.get('/cancelamento', (req,res) => {
-  res.sendFile(path.join(__dirname, 'html', 'cancelamento.html'));
-}) 
-
-server.get('/estatistica', (req,res) => {
-  res.sendFile(path.join(__dirname, 'html', 'estatistica.html'));
-}) 
+// server.get('/agendaProgramacao', (req,res) => {
+//   res.sendFile(path.join(__dirname, 'html', 'agenda_programacao.html'));
+// }) 
 
 
-server.get('/home', (req,res) => {
-  res.sendFile(path.join(__dirname, 'html', 'home.html'));
-}) 
+// server.get('/cancelamento', (req,res) => {
+//   res.sendFile(path.join(__dirname, 'html', 'cancelamento.html'));
+// }) 
+
+// server.get('/estatistica', (req,res) => {
+//   res.sendFile(path.join(__dirname, 'html', 'estatistica.html'));
+// }) 
 
 
-server.get('/voluntario', (req,res) => {
-  res.sendFile(path.join(__dirname, 'html', 'voluntario.html'));
-}) 
+// server.get('/home', (req,res) => {
+//   res.sendFile(path.join(__dirname, 'html', 'home.html'));
+// }) 
+
+
+// server.get('/voluntario', (req,res) => {
+//   res.sendFile(path.join(__dirname, 'html', 'voluntario.html'));
+// }) 
 
 
 
