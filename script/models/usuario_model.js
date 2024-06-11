@@ -21,6 +21,8 @@ const Usuario = sequelize.define('usuario',{
     tp_permissao:{
         type: Sequelize.INTEGER
     }
+}, {
+    freezeTableName: true
 })
 
 export default Usuario

@@ -24,6 +24,8 @@ const Voluntario = sequelize.define('voluntario',{
     dt_cancelado:{
         type: Sequelize.DATEONLY
     }
+},{
+    freezeTableName: true
 })
 
 export default Voluntario;

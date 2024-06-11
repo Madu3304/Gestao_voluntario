@@ -11,7 +11,7 @@ const valores = {};
 const syncDatabase = async () => {
   try {
     await sequelize.drop();
-    await sequelize.sync();
+    await sequelize.sync()
 
     // Estados
     const novoEstado = await Estado.create({

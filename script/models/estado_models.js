@@ -13,6 +13,8 @@ const Estado = sequelize.define('estado',{
         type: Sequelize.STRING,
         allowNull: false
     }
+},{
+    freezeTableName: true
 })
 
 export default Estado;
