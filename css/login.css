@@ -9,12 +9,43 @@
     padding: 0%;
 }
 
+#loginzao{
+    min-width: 280px;
+    height: 5vh;
+    border-radius: 50px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+    
+}
+
+
+#login{
+    min-width: 280px;
+    height: 5vh;
+    border-radius: 50px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+    
+}
+#senha{
+    min-width: 280px;
+    height: 5vh;
+    border-radius: 50px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+    
+}
+
 /*página cor*/
 body{
     width: 100%;  
     height: 100vh;
     font-family: 'ubuntu';
     background: linear-gradient(-45deg, #f8dc5f, #ffbd57);
+    
 }
 
 
@@ -41,7 +72,7 @@ body{
     text-align: center; */
 }
 
-
+/* 
 .input{
     min-width: 280px;
     border-radius: 50px;
@@ -49,4 +80,4 @@ body{
     padding: 5px;
     margin: 0px 0px 12px -5px;
 }
-
+ */
