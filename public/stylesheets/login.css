@@ -61,7 +61,6 @@ body{
     width: min-content;
     align-items: center;
     color: #2b344b;
-    /* text-align: center; */
     animation: iniciar 1.8s ease-out;
     pointer-events: all;
     
@@ -70,6 +69,7 @@ body{
 .title{
     font-size: 2.2em;
     margin-bottom: 10%;
+    text-align: center;
     /* padding: 10px;
     text-align: center; */
 }
