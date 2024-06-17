@@ -2,7 +2,7 @@ import express from "express";
 import http from 'http';
 import fs from 'fs';
 import path from "path";
-// import valores from './script/server.js';
+import valores from './script/server.js';
 import { router as loginRoutes} from "./routes/login_routes.js";
 import { router as eventoRoutes} from "./routes/evento_routes.js";
 import { router as agendaProgramacaoRoutes } from "./routes/agenda_programacao_route.js";
