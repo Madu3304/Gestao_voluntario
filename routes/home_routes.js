@@ -1,4 +1,10 @@
 import express from "express"
 import path from "path"
-import { dirname } from "path"
-import { fileURLToPath } from "url"
+const router = express.Router()
+
+router.get('/home', function(req,res){
+    res.render('home')
+})
+
+export {router}
+

@@ -6,6 +6,11 @@ import path from "path";
 import { router as loginRoutes} from "./routes/login_routes.js";
 import { router as eventoRoutes} from "./routes/evento_routes.js";
 import { router as agendaProgramacaoRoutes } from "./routes/agenda_programacao_route.js";
+import { router as agendaRoutes } from "./routes/agenda_routes.js";
+import { router as cancelamentoRoutes } from "./routes/cancelamento_routes.js";
+import { router as estatisticaRoutes } from "./routes/estatistica_routes.js";
+import { router as homeRoutes } from "./routes/home_routes.js";
+import { router as voluntarioRoutes} from "./routes/voluntario_routes.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
@@ -21,6 +26,11 @@ server.set('view engine', 'ejs');
 server.use('/', loginRoutes)
 server.use('/', eventoRoutes)
 server.use('/', agendaProgramacaoRoutes)
+server.use('/', agendaRoutes)
+server.use('/', cancelamentoRoutes)
+server.use('/', estatisticaRoutes)
+server.use('/', homeRoutes)
+server.use('/', voluntarioRoutes)
 
 
 server.use(express.json());
