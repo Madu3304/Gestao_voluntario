@@ -34,4 +34,9 @@ server.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`)
 })
 
+/* para funcionar meu trem - &&&&  DUDA  &&&&*/
+document.getElementById('open_btn').addEventListener('click', function () {
+  document.getElementById('sidebar').classList.toggle('open-sidebar');
+});
+
 
