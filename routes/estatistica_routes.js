@@ -1,5 +1,10 @@
 import express from "express"
 import path from "path"
-import { dirname } from "path"
-import { fileURLToPath } from "url"
 
+const router = express.Router()
+
+router.get('/estatistica', function(req,res){
+    res.render('estatistica')
+})
+
+export {router}

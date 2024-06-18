@@ -1,4 +1,9 @@
 import express from "express"
 import path from "path"
-import { dirname } from "path"
-import { fileURLToPath } from "url"
+let router = express.Router()
+
+router.get('/agenda', function(req,res){
+    res.render('agenda')
+})
+
+export {router}
