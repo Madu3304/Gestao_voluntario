@@ -1,5 +1,5 @@
 	
-/*p.my-justify-class { text-align: justify;}
+p.my-justify-class { text-align: justify;}
 
 /*colocar para assumir esse body*/
 /*página cor*/
@@ -16,7 +16,7 @@ body{
     padding: 0%;
 }
 
-  /* #login{
+   #login{
     min-width: 280px;
     height: 5vh; 
     border-radius: 50px;
@@ -24,10 +24,10 @@ body{
     padding: 5px;
     margin: 0px 0px 12px -5px;
     
-}   */
+} 
 
 
-/* #login{
+ #login{
     min-width: 280px;
     height: 5vh;
     border-radius: 50px;
@@ -35,8 +35,8 @@ body{
     padding: 5px;
     margin: 0px 0px 12px -5px;
     
-} */
-/*#senha{
+} 
+#senha{
     min-width: 280px;
     height: 5vh;
     border-radius: 50px;
@@ -44,7 +44,7 @@ body{
     padding: 5px;
     margin: 0px 0px 12px -5px;
     
-} */
+} 
 
 /*página cor*/
 
