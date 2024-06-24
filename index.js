@@ -1,6 +1,6 @@
 import express from "express";
 import http from 'http';
-import fs from 'fs';
+import fs, { appendFile } from 'fs';
 import path from "path";
 import valores from './script/server.js';
 
@@ -25,7 +25,7 @@ server.set('view engine', 'ejs');
 
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
-server.use(express.static(path.join(__dirname,'public')))
+server.use(express.static(path.join(__dirname,'/public')))
 
 server.use('/', loginRoutes)
 server.use('/', eventoRoutes)
@@ -36,10 +36,13 @@ server.use('/', estatisticaRoutes)
 server.use('/', homeRoutes)
 server.use('/', voluntarioRoutes)
 
+
 const PORT = process.env.PORT || 8080
 server.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`)
 })
+
+
 
 /* para funcionar meu trem - &&&&  DUDA  &&&&
 document.getElementById('open_btn').addEventListener('click', function () {
