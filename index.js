@@ -4,14 +4,14 @@ import fs, { appendFile } from 'fs';
 import path from "path";
 import valores from './script/server.js';
 
-import { router as loginRoutes} from "./routes/login_routes.js";
-import { router as eventoRoutes} from "./routes/evento_routes.js";
-import { router as agendaProgramacaoRoutes } from "./routes/agenda_programacao_route.js";
-import { router as agendaRoutes } from "./routes/agenda_routes.js";
-import { router as cancelamentoRoutes } from "./routes/cancelamento_routes.js";
-import { router as estatisticaRoutes } from "./routes/estatistica_routes.js";
-import { router as homeRoutes } from "./routes/home_routes.js";
-import { router as voluntarioRoutes} from "./routes/voluntario_routes.js";
+import { router as loginRoutes} from "./script/routes/login_routes.js";
+import { router as eventoRoutes} from "./script/routes/evento_routes.js";
+import { router as agendaProgramacaoRoutes } from "./script/routes/agenda_programacao_route.js";
+import { router as agendaRoutes } from "./script/routes/agenda_routes.js";
+import { router as cancelamentoRoutes } from "./script/routes/cancelamento_routes.js";
+import { router as estatisticaRoutes } from "./script/routes/estatistica_routes.js";
+import { router as homeRoutes } from "./script/routes/home_routes.js";
+import { router as voluntarioRoutes} from "./script/routes/voluntario_routes.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
