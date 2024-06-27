@@ -1,4 +1,4 @@
- import sequelize from './config/connection.js';
+import sequelize from './config/connection.js';
 import Estado from './models/estado_models.js';
 import Voluntario from './models/voluntario.model.js';
 import Usuario from './models/usuario_model.js';
@@ -10,7 +10,7 @@ const valores = {};
 
 const syncDatabase = async () => {
   try {
-    await sequelize.drop();
+    // await sequelize.drop();
     await sequelize.sync()
 
     // Estados
