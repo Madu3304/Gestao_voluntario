@@ -1,5 +1,3 @@
-// import { where } from "sequelize"
-// import sequelize from "../config/connection.js"
 import { where } from "sequelize"
 import Evento from "../models/evento_model.js"
 

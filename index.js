@@ -6,14 +6,8 @@ import valores from './script/server.js';
 
 
 // import sincronizarBanco from "./script/server.js"
-import { router as loginRoutes} from "./script/routes/login_routes.js";
 import { router as eventoRoutes} from "./script/routes/evento_routes.js";
-import { router as agendaProgramacaoRoutes } from "./script/routes/agenda_programacao_route.js";
-import { router as agendaRoutes } from "./script/routes/agenda_routes.js";
-import { router as cancelamentoRoutes } from "./script/routes/cancelamento_routes.js";
-import { router as estatisticaRoutes } from "./script/routes/estatistica_routes.js";
-import { router as homeRoutes } from "./script/routes/home_routes.js";
-import { router as voluntarioRoutes} from "./script/routes/voluntario_routes.js";
+import { router as cidadeRoutes} from "./script/routes/cidade_routes.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
@@ -29,15 +23,8 @@ server.use(express.json());
 server.use(express.urlencoded({extended:true}));
 server.use(express.static(path.join(__dirname,'/public')))
 
-server.use(loginRoutes)
 server.use(eventoRoutes)
-server.use(agendaProgramacaoRoutes)
-server.use(agendaRoutes)
-server.use(cancelamentoRoutes)
-server.use(estatisticaRoutes)
-server.use(homeRoutes)
-server.use(voluntarioRoutes)
-
+server.use(cidadeRoutes)
 
 const PORT = process.env.PORT || 8080
 server.listen(PORT, () => {
