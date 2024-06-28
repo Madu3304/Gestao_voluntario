@@ -7,6 +7,9 @@ import Evento from './models/evento_model.js';
 import Voluntario_Evento from './models/voluntario_evento_model.js';
 
 const valores = {};
+// const sincronizarBanco = await sequelize.sync()
+
+// export default sincronizarBanco;
 
 const syncDatabase = async () => {
   try {
