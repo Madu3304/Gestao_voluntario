@@ -13,7 +13,7 @@ const valores = {};
 
 const syncDatabase = async () => {
   try {
-    // await sequelize.drop();
+    await sequelize.drop();
     await sequelize.sync()
 
     // Estados
