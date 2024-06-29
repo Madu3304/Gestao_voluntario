@@ -9,6 +9,7 @@ import valores from './script/server.js';
 import { router as eventoRoutes} from "./script/routes/evento_routes.js";
 import { router as cidadeRoutes} from "./script/routes/cidade_routes.js";
 import { router as estadoRoutes } from "./script/routes/estado_routes.js";
+import { router as voluntarioRoutes } from "./script/routes/voluntario_routes.js";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
@@ -27,6 +28,7 @@ server.use(express.static(path.join(__dirname,'/public')))
 server.use(eventoRoutes)
 server.use(cidadeRoutes)
 server.use(estadoRoutes)
+server.use(voluntarioRoutes)
 
 const PORT = process.env.PORT || 8080
 server.listen(PORT, () => {
