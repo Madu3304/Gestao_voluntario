@@ -135,23 +135,23 @@
 
 
     <div id="form">
-        <form action="/Cadastre-se" method="POST">
+        <form action="#" method="POST">
             <h2 class="title"> Cadastre-se</h2>
             
             <label for="full name"> Nome Completo</label>
             <div class="input">
-                <input id="fullnome" type="texte" nome="fullname" placeholder="Digete seu nome completo" required>
+                <input id="fullnome" type="texte" nome="fullname" placeholder="Digite seu nome completo" required>
             </div>
 
 
             <label for="email">Email</label>
             <div class="input">   
-                <input id="email type="email" nome="email" placeholder="Digete seu E-mail" required>
+                <input id="email" type="email" nome="email" placeholder="Digite seu E-mail" required>
             </div>
         
         
             <label for="number">Telefone</label>
-          <div class="input">
+            <div class="input">
                 <input id="number" type="tel" nome="number" placeholder="(xx) xxxx-xxxx" required>
             </div>
         
@@ -162,28 +162,63 @@
              </div>
         
             
-             <label for="city">Cidade</label>
+            <label for="city">Cidade</label>
             <div class="input">
                 <input id="city" type="city" nome="texte" placeholder="Digite sua Cidade">
             </div>
 
 
-            <label for="title">Envento</label>
+            <label for="title">Evento</label>
             <div class="input">
-               <input id="title" type="title" nome="texte" placeholder="Envento que participará" required>
-           </div>
+               <input id="evento" type="title" nome="texte" placeholder="Envento que participará" required>
+            </div>
 
 
            <label for="title">Projeto</label>
            <div class="input">
-           
-           <input id="title" type="title" nome="texte" placeholder="Projeto que participará" required>
-            </div>
+                <input id="projeto" type="title" nome="texte" placeholder="Projeto que participará" required>
+           </div>
 
             <div id="btn">
-                <button type="submit">Cadastre-se</button>
+                <button type="button" id="cadastrarVoluntario">Cadastre-se</button>
             </div>
-
-    <script JavaS="JavaS/script.js"></script>
 </body>
+    <script JavaS="JavaS/script.js"></script>
+
+    <script>
+        const btnCadastrarVoluntario = document.getElementById('cadastrarVoluntario')
+
+        btnCadastrarVoluntario.addEventListener('click', function(){
+            const nomeVoluntario = document.getElementById('fullnome').value
+            const emailVoluntario = document.getElementById('email').value
+            const telefoneVoluntario = document.getElementById('number').value
+            const estadoVoluntario = document.getElementById('state').value
+            const cidadeVoluntario = document.getElementById('city').value
+            const eventoVoluntario = document.getElementById('evento').value
+            const projetoVoluntario = document.getElementById('projeto').value
+
+            const dadosVoluntario ={
+                nomeVoluntario,
+                emailVoluntario,
+                telefoneVoluntario,
+                estadoVoluntario,
+                cidadeVoluntario,
+                eventoVoluntario,
+                projetoVoluntario
+            }
+
+            fetch('/voluntario',{
+                method: 'POST',
+                headers:  {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dadosVoluntario)
+            })
+            .then(response => response.json())
+            .then(data =>{
+                console.log('Voluntario Cadastrado com sucesso:', data)
+            })
+            .catch(error=> console.log('Erro ao cadastrar voluntario:', error))
+        })
+    </script>
 </html>

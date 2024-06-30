@@ -19,8 +19,33 @@ const server = express();
 
 server.use(express.static(path.join(__dirname, 'views')))
 
+
+server.get('/agenda', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'views', 'html', 'agenda.html'))
+})
+
+server.get('/cancelamento', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'views', 'html', 'cancelamento.html'))
+})
+
+server.get('/estatistica', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'views', 'html', 'estatistica.html'))
+})
+
 server.get('/evento', (req,res)=>{
   res.sendFile(path.join(__dirname, 'views', 'html', 'evento.html'))
+})
+
+server.get('/home', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'views', 'html', 'home.html'))
+})
+
+server.get('/login', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'views', 'html', 'login.html'))
+})
+
+server.get('/voluntario', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'views', 'html', 'voluntario.html'))
 })
 
 
