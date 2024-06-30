@@ -18,6 +18,12 @@ const Evento = sequelize.define('evento',{
     },
     tp_projeto:{
         type: Sequelize.STRING
+    },
+    categoria_evento:{
+        type: Sequelize.STRING
+    },
+    nome_evento:{
+        type: Sequelize.STRING
     }
 })
 

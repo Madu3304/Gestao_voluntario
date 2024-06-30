@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/estatistica.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Voluntario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Estatística</title>
 </head>
 <body>
+
     <nav id="sidebar">
-        <div id="sidebar_content">
+        <div id="sidebar-content">
             <div id="user">
-                <img src="../public/imagens/logoBordaBrancatransparente.png" id="user_logo" alt="Logo">
-    
-                <p id="user_infos">
+                <img src="../imagens/logoBordaBrancatransparente.png" id="user-logo" alt="Logo">
+                <p id="user-infos">
                     <span class="item-description">
                         Passa Tempo
                     </span>
                 </p>
             </div>
-    
-            <ul id="side_items">
+
+            <ul id="side-items">
                 <li class="side-item active">
                     <a href="#">
                         <i class="fa-solid fa-house"></i>
@@ -29,7 +31,7 @@
                         </span>
                     </a>
                 </li>
-    
+
                 <li class="side-item">
                     <a href="#">
                         <i class="fa-solid fa-user"></i>
@@ -38,7 +40,7 @@
                         </span>
                     </a>
                 </li>
-    
+
                 <li class="side-item">
                     <a href="#">
                         <i class="fa-regular fa-calendar-days"></i>
@@ -47,7 +49,7 @@
                         </span>
                     </a>
                 </li>
-    
+
                 <li class="side-item">
                     <a href="#">
                         <i class="fa-solid fa-file-pen"></i>
@@ -56,28 +58,148 @@
                         </span>
                     </a>
                 </li>
-     
+
                 <li class="side-item">
                     <a href="#">
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
-                            Gráficos
+                            Estatística
                         </span>
                     </a>
                 </li>
             </ul>
-    
-            <button id="open_btn">
-                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+
+            <button id="open-btn">
+                <i id="open-btn-icon" class="fa-solid fa-chevron-right"></i>
             </button>
         </div>
 
         <div id="logout">
-            <button id="logout_btn">
+            <button id="logout-btn">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="item-description">
                     Logout
                 </span>
             </button>
         </div>
+
     </nav>
+    <main>
+        <div class="title-bg">
+            <h1 class="title">
+                Estatística de Eventos
+            </h1>
+        </div>
+        <div class="content-bg">
+            <div class="content">
+
+                <!-- filtros -->
+                <div class="filter">
+                    <div class="filter-option">
+                        <p>
+                            Cidade/Estado
+                        </p>
+                        <select name="cidade-estado">
+                            <option value="Todos">Todos</option>
+                            <!-- incluir um fetch(GET) para o restante -->
+                        </select>
+                    </div>
+                    <div class="filter-option">
+                        <p>
+                            Categoria
+                        </p>
+                        <select name="categoria">
+                            <option value="Todos">Todos</option>
+                            <!-- incluir um fetch(GET) para o restante -->
+                        </select>
+                    </div>
+                    <div class="filter-option">
+                        <p>
+                            Colaborador
+                        </p>
+                        <select name="colaborador">
+                            <option value="Todos">Todos</option>
+                            <!-- incluir um fetch(GET) para o restante -->
+                        </select>
+                    </div>
+                </div>
+
+                <!-- contadores -->
+                <div class="count-bg">
+                    <div class="count">
+                        <div class="count-item">
+                            <div id="count-value">
+                                999
+                            </div>
+                            <p>
+                                Quantidade de Eventos
+                            </p>
+                        </div>
+                        <div class="count-item">
+                            <div id="count-value">
+                                999
+                            </div>
+                            <p>
+                                Quantidade de Voluntarios
+                            </p>
+                        </div>
+                        <div class="count-item">
+                            <div id="count-value">
+                            999
+                            </div>
+                            <p>
+                                Quantidade Arrecadada
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wrapper">
+                    <!-- gráfico de barras -->
+                    <div class="graph-bg">
+                        <div class="graph">
+                            <p>
+                                Quantidade
+                            </p>
+                            <!--lógica do gráfico -->
+                        </div>
+                    </div>
+                    <div class="ranking-bg">
+                        <div class="ranking">
+                            <p>
+                                Top Contribuidores
+                            </p>
+                            <div class="colaborador-1">
+                                <div id="colaborador-image">
+                                    <img src="#" />
+                                </div>
+                                <p id="colaborador-name-1">
+                                    Colaborador 1
+                                </p>
+                            </div>
+                            <div class="colaborador-2">
+                                <div id="colaborador-image">
+                                    <img src="#" />
+                                </div>
+                                <p id="colaborador-name-2">
+                                    Colaborador 2
+                                </p>
+                            </div>
+                            <div class="colaborador-3">
+                                <div id="colaborador-image">
+                                    <img src="#" />
+                                </div>
+                                <p id="colaborador-name-3">
+                                    Colaborador 3
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
