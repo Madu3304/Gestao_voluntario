@@ -1,12 +1,3 @@
-/* body {
-    font-family: "Ubuntu", sans-serif;
-    width: 100;
-    height: 100vh;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-     
-  } */
 
   * {
     margin: 0;
@@ -170,68 +161,23 @@ body {
  /*até é a configuração do menu, depois é o formu*/
  /*&&&&&&&&&&&&&&&&&&&&&&&&*/  
   
-  
-
-
 
   
  .container {
-  width: 80%;
-  height: 80vh;
+  width: 50%;
+  height: 50vh;
   display: flex;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
 }
 
-.form-image {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fde3a7d7;
-  padding: 1rem;
-}
-
-.form-image img {
-  width: 31rem;
-}
-
 .form {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  padding: 3rem;
-}
-
-.form-header {
-  margin-bottom: 3rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.login-button {
-  display: flex;
-  align-items: center;
-}
-
-.login-button button {
-  border: none;
-  background-color: #6c63ff;
-  padding: 0.4rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.login-button button:hover {
-  background-color: #6b63fff1;
-}
-
-.login-button button a {
-  text-decoration: none;
-  font-weight: 500;
-  color: #fff;
+  padding: 20rem;
 }
 
 .form-header h1::after {
@@ -239,8 +185,8 @@ body {
   display: block;
   width: 5rem;
   height: 0.3rem;
-  background-color: #6c63ff;
-  margin: 0 auto;
+  background-color: #dd8808;
+  /* margin:  auto; */
   position: absolute;
   border-radius: 10px;
 }
@@ -264,7 +210,7 @@ body {
   border: none;
   border-radius: 10px;
   box-shadow: 1px 1px 6px #0000001c;
-  font-size: 0.8rem;
+  font-size: 1.0rem;
 }
 
 .input-box input:hover {
@@ -308,25 +254,28 @@ body {
   color: #000000c0;
 }
 
-.continue-button button {
+#btn {
+  grid-column: span 2; /* Faz com que o botão ocupe duas colunas */
+  margin-top: 1rem;
   width: 100%;
-  margin-top: 2.5rem;
+  text-align: center;
+}
+
+#btn button {
+  font-family: 'Ubuntu';
+  background: linear-gradient(-45deg, #e68183, #eb6d0b);
+  width: 100%;
+  height: 40px;
   border: none;
-  background-color: #6c63ff;
-  padding: 0.62rem;
-  border-radius: 5px;
+  font-size: 1.2em;
+  color: #fff;
+  border-radius: 20px;
+  outline: none;
   cursor: pointer;
 }
 
-.continue-button button:hover {
-  background-color: #6b63fff1;
-}
-
-.continue-button button a {
-  text-decoration: none;
-  font-size: 0.93rem;
-  font-weight: 500;
-  color: #fff;
+#btn button:hover {
+  background: linear-gradient(-45deg, #e68183, #eb6d0b);
 }
 
 @media screen and (max-width: 1330px) {
