@@ -16,7 +16,7 @@
 
 .btn{
     padding: 10px 60px;
-    background: #e68183;
+    background: #ffb158;
     border: 0;
     outline: none;
     cursor: pointer;
@@ -42,7 +42,8 @@
 
 .open-popup{
     visibility: visible;
-    top: 50%;
+    top: 10%;
+    left: 35%;
     transform: translate3d(-50%, -50%) scale(1);
 }
 
@@ -56,7 +57,7 @@
 .popup h2{
 font-size: 38px;
 font-weight: 500;
-margin: 10px 0;
+margin: 30px 0 10px;
 }
 
 .popup button{
