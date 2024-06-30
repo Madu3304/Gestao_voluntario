@@ -12,8 +12,7 @@
     <nav id="sidebar">
         <div id="sidebar_content">
             <div id="user">
-                <img src="../public/imagens/logoBordaBrancatransparente.png" id="user_logo" alt="Logo">
-    
+                <img src="../imagens/logoBordaBrancatransparente.png" id="user_logo" alt="Logo">    
                 <p id="user_infos">
                     <span class="item-description">
                         Passa Tempo
@@ -85,14 +84,14 @@
 
 
     <div class="form">
-        <form action="#">
+        <form action="#" method="POST">
             <div class="form-header">
                 <div class="title">
                     <h1>Cadastrar novo Evento </h1>
                 </div>
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="name"> Categoria do Envento</label>
+                        <label for="name"> Categoria do Evento</label>
                         <input id="nome" type="text" name="text" placeholder="Categoria do evento" required>
                     </div>
 
@@ -119,11 +118,46 @@
 
             </div>
 
-            <div class="container-button">
+            <!-- <div class="container-button">
                 <button><a href="#"></a></button>
+            </div> -->
+            <div class="container-button">
+                <button type="button" id="cadastrarEvento">Cadastrar Evento</button>
             </div>
         </form>
     </div>
     
 </body>
+    <script>
+        const btnCadastrarEvento = document.getElementById('cadastrarEvento')
+
+        btnCadastrarEvento.addEventListener('click', function(){
+            const nomeEvento = document.getElementById('title').value
+            const categoriaEvento = document.getElementById('nome').value
+            const cidadeEvento = document.getElementById('city').value
+            const horarioEvento = document.getElementById('hours').value
+            const descricaoEvento = document.getElementById('descricao').value
+
+            const dadosEvento = {
+                nomeEvento,
+                categoriaEvento,
+                cidadeEvento,
+                horarioEvento,
+                descricaoEvento
+            }
+
+            fetch('/evento',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dadosEvento)
+            })
+            .then(response => response.json())
+            .then(data =>{
+                console.log('Evento Cadastrado com sucesso:', data)
+            })
+            .catch(error=> console.error('Erro ao cadastrar evento:', error))
+        })
+    </script>
 </html>

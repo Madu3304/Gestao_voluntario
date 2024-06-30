@@ -14,10 +14,17 @@ evento.getEventos = async(req, res)=>{
 
 evento.createEvento = async(req, res)=>{
     try {
-        const {dt_evento, ds_evento, tp_projeto, cd_cidade, cd_estado} = req.body
+        const {categoriaEvento, nomeEvento, dt_evento, descricaoEvento, tp_projeto, cd_cidade, cd_estado} = req.body
         const novoEvento = Evento.create({
+            // nomeEvento,
+            // categoriaEvento,
+            // cidadeEvento,
+            // horarioEvento,
+            // descricaoEvento
+            categoria_evento: categoriaEvento,
+            nome_evento: nomeEvento,
             dt_evento: dt_evento,
-            ds_evento: ds_evento,
+            ds_evento: descricaoEvento,
             tp_projeto: tp_projeto,
             cd_cidade: cd_cidade,
             cd_estado: cd_estado

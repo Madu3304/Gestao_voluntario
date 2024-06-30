@@ -7,8 +7,5 @@ router.post('/evento', evento.createEvento)
 router.put('/evento/:cd_evento',evento.updateEvento)
 router.delete('/evento/:cd_evento', evento.deleteEvento)
 
-// router.get('/evento', (req,res) => {
-//     res.render('evento')
-// }) 
 
 export {router}
