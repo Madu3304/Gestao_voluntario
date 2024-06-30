@@ -25,7 +25,8 @@
     
             <ul id="side_items">
                 <li class="side-item active">
-                    <a href="home.html">
+                    <a id="redirecionarHome">
+                    <!-- <a href="home.html"> -->
                         <i class="fa-solid fa-house"></i>
                         <span class="item-description">
                             Home
@@ -34,7 +35,8 @@
                 </li>
     
                 <li class="side-item">
-                    <a href="voluntario.html">
+                    <a id="redirecionarVoluntario">
+                    <!-- <a href="voluntario.html"> -->
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Voluntários
@@ -43,7 +45,8 @@
                 </li>
     
                 <li class="side-item">
-                    <a href="agenda.html">
+                    <a id="redirecionarAgenda">
+                    <!-- <a href="agenda.html"> -->
                         <i class="fa-regular fa-calendar-days"></i>
                         <span class="item-description">
                             Agenda
@@ -52,16 +55,18 @@
                 </li>
     
                 <li class="side-item">
-                    <a href="evento.html">
+                    <a id="redirecionarEvento">
+                    <!-- <a href="evento.html"> -->
                         <i class="fa-solid fa-file-pen"></i>
                         <span class="item-description">
-                            Envento
+                            Evento
                         </span>
                     </a>
                 </li>
      
                 <li class="side-item">
-                    <a href="estatistica.html">
+                    <a id="redirecionarEstatistica">
+                    <!-- <a href="estatistica.html"> -->
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
                             Gráficos
@@ -204,4 +209,21 @@
 
 </body>
 
+<script>
+        document.getElementById('redirecionarHome').addEventListener('click', function(){
+            window.location.href = '/home'
+        })
+        document.getElementById('redirecionarVoluntario').addEventListener('click', function(){
+            window.location.href = '/voluntario'
+        })
+        document.getElementById('redirecionarAgenda').addEventListener('click', function(){
+            window.location.href = '/agenda'
+        })
+        document.getElementById('redirecionarEvento').addEventListener('click', function(){
+            window.location.href = '/evento'
+        })
+        document.getElementById('redirecionarEstatistica').addEventListener('click', function(){
+            window.location.href = '/estatistica'
+        })
+</script>
 </html>
