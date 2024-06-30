@@ -44,10 +44,5 @@ server.listen(PORT, () => {
 
 
 
-/* para funcionar meu trem - &&&&  DUDA  &&&&
-document.getElementById('open_btn').addEventListener('click', function () {
-  document.getElementById('sidebar').classList.toggle('open-sidebar');
-});
-*/
 
 

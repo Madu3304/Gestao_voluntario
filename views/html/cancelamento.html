@@ -7,13 +7,28 @@
     <title>Cancelamento</title>
 </head>
 <body>
-    <div class="quadrado">
-        <div class="texto-cancelamento"> 
-            DESEJA CANCELAR A SUA INSCRIÇÃO
-        </div>
-        <div class="botoes">
-            <input id="botao-cancelar" type="button" value="CANCELAR">
-        </div>
+    <div class="container">
+        <button type="Cancelamento" class="btn" onclick="openPopup()">Cancelar</button>
+    <div class="popup"  id="popup">
+        <img imagen="download(8).png">
+        <h2>Deseja cancelar sua inscrição?</h2>
+        <p>Inscrição cancelanda com sucesso.</p>
+        <button type="button" onclick="closePopup()">OK</button>
     </div>
+</div>
+
+<script>
+    let popup = document.getElementById("popup");
+
+function openPopup(){
+    popup.classList.add("open-popup");
+}
+
+function closePopup(){
+    popup.classList.remove("open-popup");
+}
+
+</script>
+    
 </body>
 </html>
