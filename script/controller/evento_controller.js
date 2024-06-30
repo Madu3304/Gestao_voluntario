@@ -15,7 +15,7 @@ evento.getEventos = async(req, res)=>{
 evento.createEvento = async(req, res)=>{
     try {
         const {categoriaEvento, nomeEvento, dt_evento, descricaoEvento, tp_projeto, cd_cidade, cd_estado} = req.body
-        const novoEvento = Evento.create({
+        const novoEvento = await Evento.create({
             // nomeEvento,
             // categoriaEvento,
             // cidadeEvento,

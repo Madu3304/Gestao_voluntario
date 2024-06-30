@@ -10,10 +10,10 @@ voluntario.getVoluntario = async(req,res)=>{
 
 voluntario.createVoluntario = async(req,res)=>{
     try {
-        const {nm_voluntario, email, endereco, ie_cancelado, dt_cancelado} = req.body
+        const {nomeVoluntario, emailVoluntario, endereco, ie_cancelado, dt_cancelado} = req.body
         const novoVoluntario = await Voluntario.create({
-            nm_voluntario: nm_voluntario,
-            email: email,
+            nm_voluntario: nomeVoluntario,
+            email: emailVoluntario,
             endereco: endereco,
             ie_cancelado: ie_cancelado,
             dt_cancelado: dt_cancelado
