@@ -1,9 +1,14 @@
+import { config } from "dotenv-safe";
+config()
 import express from "express";
 import http from 'http';
-// import fs, { appendFile } from 'fs';
 import path from "path";
 import valores from './script/server.js';
 import { fileURLToPath } from "url";
+import jwt from "jsonwebtoken"
+import cors from "cors"
+import bodyParser from "body-parser";
+import { verify } from "crypto";
 
 
 import { router as eventoRoutes} from "./script/routes/evento_routes.js";
