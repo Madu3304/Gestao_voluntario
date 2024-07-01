@@ -9,6 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Estatística</title>
 </head>
+
 <body>
     <nav id="sidebar">
         <div id="sidebar-content">
@@ -20,7 +21,7 @@
                     </span>
                 </p>
             </div>
-    
+
             <ul id="side-items">
                 <li class="side-item active">
                     <a id="redirecionarHome">
@@ -30,7 +31,7 @@
                         </span>
                     </a>
                 </li>
-    
+
                 <li class="side-item">
                     <a id="redirecionarVoluntario">
                         <i class="fa-solid fa-user"></i>
@@ -39,7 +40,7 @@
                         </span>
                     </a>
                 </li>
-    
+
                 <li class="side-item">
                     <a id="redirecionarAgenda">
                         <i class="fa-regular fa-calendar-days"></i>
@@ -48,7 +49,7 @@
                         </span>
                     </a>
                 </li>
-    
+
                 <li class="side-item">
                     <a id="redirecionarEvento">
                         <i class="fa-solid fa-file-pen"></i>
@@ -57,7 +58,7 @@
                         </span>
                     </a>
                 </li>
-     
+
                 <li class="side-item">
                     <a id="redirecionarEstatistica">
                         <i class="fa-solid fa-chart-line"></i>
@@ -67,7 +68,7 @@
                     </a>
                 </li>
             </ul>
-    
+
             <button id="open-btn">
                 <i id="open-btn-icon" class="fa-solid fa-chevron-right"></i>
             </button>
@@ -83,7 +84,7 @@
         </div>
     </nav>
 
-    
+
     <main>
         <div class="title-bg">
             <h1 class="title">
@@ -129,7 +130,7 @@
                     <div class="count">
                         <div class="count-item">
                             <div id="count-value">
-                                999
+                                5
                             </div>
                             <p>
                                 Quantidade de Eventos
@@ -137,15 +138,18 @@
                         </div>
                         <div class="count-item">
                             <div id="count-value">
-                                999
+                                12
                             </div>
                             <p>
                                 Quantidade de Voluntarios
                             </p>
                         </div>
                         <div class="count-item">
-                            <div id="count-value">
-                            999
+                            <div id="count-price">
+                                R$ 
+                                <span id="count-value">
+                                    200
+                                </span>
                             </div>
                             <p>
                                 Quantidade Arrecadada
@@ -155,43 +159,53 @@
                 </div>
 
                 <div class="wrapper">
+
                     <!-- gráfico de barras -->
                     <div class="graph-bg">
-                        <div class="graph">
-                            <p>
+                        <p class="graph-title">
+                            Arrecadação por Mês
+                        </p>
+                        <div class="graph-wrapper">
+                            <p class="graph-qt">
                                 Quantidade
                             </p>
-                            <!--lógica do gráfico -->
+                            <div class="graph">
+                                 <!--lógica do gráfico -->
+                            </div>
                         </div>
                     </div>
+
+                    <!-- ranking -->
                     <div class="ranking-bg">
-                        <div class="ranking">
-                            <p>
+                        <div class="flex-container">
+                            <p class="ranking-title">
                                 Top Contribuidores
                             </p>
-                            <div class="colaborador-1">
-                                <div id="colaborador-image">
-                                    <img src="#" />
+                            <div class="ranking">
+                                <div class="colaborador-1 colaborador-grid">
+                                    <div id="colaborador-image">
+                                        <img src="/views/imagens/user.png" />
+                                    </div>
+                                    <p id="colaborador-name-1">
+                                        Colaborador 1
+                                    </p>
                                 </div>
-                                <p id="colaborador-name-1">
-                                    Colaborador 1
-                                </p>
-                            </div>
-                            <div class="colaborador-2">
-                                <div id="colaborador-image">
-                                    <img src="#" />
+                                <div class="colaborador-2 colaborador-grid">
+                                    <div id="colaborador-image">
+                                        <img src="/views/imagens/user.png" />
+                                    </div>
+                                    <p id="colaborador-name-2">
+                                        Colaborador 2
+                                    </p>
                                 </div>
-                                <p id="colaborador-name-2">
-                                    Colaborador 2
-                                </p>
-                            </div>
-                            <div class="colaborador-3">
-                                <div id="colaborador-image">
-                                    <img src="#" />
+                                <div class="colaborador-3 colaborador-grid">
+                                    <div id="colaborador-image">
+                                        <img src="/views/imagens/user.png" />
+                                    </div>
+                                    <p id="colaborador-name-3">
+                                        Colaborador 3
+                                    </p>
                                 </div>
-                                <p id="colaborador-name-3">
-                                    Colaborador 3
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -199,24 +213,24 @@
             </div>
         </div>
     </main>
-
 </body>
 
 <script>
-        document.getElementById('redirecionarHome').addEventListener('click', function(){
-            window.location.href = '/home'
-        })
-        document.getElementById('redirecionarVoluntario').addEventListener('click', function(){
-            window.location.href = '/voluntario'
-        })
-        document.getElementById('redirecionarAgenda').addEventListener('click', function(){
-            window.location.href = '/agenda'
-        })
-        document.getElementById('redirecionarEvento').addEventListener('click', function(){
-            window.location.href = '/evento'
-        })
-        document.getElementById('redirecionarEstatistica').addEventListener('click', function(){
-            window.location.href = '/estatistica'
-        })
+    document.getElementById('redirecionarHome').addEventListener('click', function () {
+        window.location.href = '/home'
+    })
+    document.getElementById('redirecionarVoluntario').addEventListener('click', function () {
+        window.location.href = '/voluntario'
+    })
+    document.getElementById('redirecionarAgenda').addEventListener('click', function () {
+        window.location.href = '/agenda'
+    })
+    document.getElementById('redirecionarEvento').addEventListener('click', function () {
+        window.location.href = '/evento'
+    })
+    document.getElementById('redirecionarEstatistica').addEventListener('click', function () {
+        window.location.href = '/estatistica'
+    })
 </script>
+
 </html>
