@@ -76,7 +76,7 @@ header {
 }
 
 .side-item:hover:not(.active),
-#logout_btn:hover {
+#logout-btn:hover {
   background-color: #e3e9f7;
   transition: all .4s ease-in-out;
 }
