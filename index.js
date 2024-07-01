@@ -16,11 +16,18 @@ import { router as cidadeRoutes} from "./script/routes/cidade_routes.js";
 import { router as estadoRoutes } from "./script/routes/estado_routes.js";
 import { router as voluntarioRoutes } from "./script/routes/voluntario_routes.js";
 import { router as voluntarioEventoRoutes } from "./script/routes/voluntario_evento_routes.js";
+import { router as authRoutes } from "./script/routes/auth_routes.js";
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const server = express();
+
+server.use(express.json());
+server.use(express.urlencoded({extended:true}));
+server.use(cors())
+server.use(bodyParser.json())
+
 
 server.use(express.static(path.join(__dirname, 'views')))
 
@@ -54,14 +61,12 @@ server.get('/voluntario', (req,res)=>{
 })
 
 
-server.use(express.json());
-server.use(express.urlencoded({extended:true}));
-
 server.use(eventoRoutes)
 server.use(cidadeRoutes)
 server.use(estadoRoutes)
 server.use(voluntarioRoutes)
 server.use(voluntarioEventoRoutes)
+server.use(authRoutes)
 
 const PORT = process.env.PORT || 8080
 server.listen(PORT, () => {

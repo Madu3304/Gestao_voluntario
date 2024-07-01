@@ -16,20 +16,61 @@
             <label for="login">Login</label>
             <div class="input">
                 <i class="fa-solid fa-user"></i>
-                <input id="login" name="login" placeholder="Login" type="text" required>
+                <input id="user" name="user" placeholder="Login" type="text" required>
             </div>
 
             <label for="senha">Senha</label>
             <div class="input">
                 <i class="fa-solid fa-lock"></i>
-                <input id="senha" name="senha" placeholder="Password" type="password" required>
+                <input id="pwd" name="pwd" placeholder="Password" type="password" required>
             </div>
 
             <div id="btn">
-                <button type="submit">Login</button>
+                <button type="submit" id="botaoLogin">Login</button>
             </div>
         </form>
     </div>
     
 </body>
+
+<script>
+    const botaoLogin = document.getElementById('botaoLogin')
+
+    botaoLogin.addEventListener('click', function(event){
+        // event.preventDefault()
+
+        const user = document.getElementById('user').value
+        const pwd = document.getElementById('pwd').value
+
+        const dadosLogin = {
+            user,
+            pwd
+        }
+
+        fetch('/login',{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dadosLogin)
+        })
+        .then(response => {
+            if(!response.ok){
+                throw new Error('Credencias inválidas')
+            }
+            return response.json()
+        })
+        .then(data => {
+        if (data.token) {
+            // Salve o token no localStorage ou cookie
+            localStorage.setItem('token', data.token);
+            // Redirecione para a URL retornada
+            window.location.href = data.redirectUrl;
+        }
+    })
+        .catch(error=> console.error('Erro ao tentar logar:',error))
+    })
+
+</script>
+
 </html>
