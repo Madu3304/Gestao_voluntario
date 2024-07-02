@@ -1,13 +1,5 @@
-/* body {
-    font-family: "Ubuntu", sans-serif;
-    width: 100;
-    height: 100vh;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-     
-  } */
-  * {
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -24,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #ffdb49;
+    background-color: #fcd362;
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: relative;
@@ -165,5 +157,3 @@ body {
     justify-content: flex-start;
     gap: 14px;
 }
- 
-/* ali é do menu do lado*/
