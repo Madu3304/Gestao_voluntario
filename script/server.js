@@ -6,8 +6,8 @@ import Cidade from './models/cidade_model.js';
 import Evento from './models/evento_model.js';
 import Voluntario_Evento from './models/voluntario_evento_model.js';
 
-const valores = {};
-// const sincronizarBanco = await sequelize.sync()
+// const valores = {};
+const sincronizarBanco = await sequelize.sync()
 
 // export default sincronizarBanco;
 
@@ -73,6 +73,6 @@ const syncDatabase = async () => {
   }
 };
 
-await syncDatabase();
-
-export default valores;
+// await syncDatabase();
+export default sincronizarBanco;
+// export default valores;

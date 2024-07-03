@@ -3,7 +3,9 @@ config()
 import express from "express";
 import http from 'http';
 import path from "path";
-import valores from './script/server.js';
+// import valores from './script/server.js';
+import sincronizarBanco from "./script/server.js";
+import { authenticateToken } from "./middleware/auth.js";
 import { fileURLToPath } from "url";
 import jwt from "jsonwebtoken"
 import cors from "cors"
@@ -31,10 +33,18 @@ server.use(bodyParser.json())
 
 server.use(express.static(path.join(__dirname, 'views')))
 
+server.get('/login', (req,res)=>{
+  res.sendFile(path.join(__dirname, 'views', 'html', 'login.html'))
+})
+
+
+// server.use(authenticateToken)
 
 server.get('/agenda', (req,res)=>{
   res.sendFile(path.join(__dirname, 'views', 'html', 'agenda.html'))
 })
+
+// server.use('/agenda', authenticateToken)
 
 server.get('/cancelamento', (req,res)=>{
   res.sendFile(path.join(__dirname, 'views', 'html', 'cancelamento.html'))
@@ -52,9 +62,7 @@ server.get('/home', (req,res)=>{
   res.sendFile(path.join(__dirname, 'views', 'html', 'home.html'))
 })
 
-server.get('/login', (req,res)=>{
-  res.sendFile(path.join(__dirname, 'views', 'html', 'login.html'))
-})
+
 
 server.get('/voluntario', (req,res)=>{
   res.sendFile(path.join(__dirname, 'views', 'html', 'voluntario.html'))
@@ -72,8 +80,3 @@ const PORT = process.env.PORT || 8080
 server.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`)
 })
-
-
-
-
-
