@@ -138,6 +138,7 @@
             const horarioEvento = document.getElementById('hours').value
             const descricaoEvento = document.getElementById('descricao').value
 
+            //Garante que todos o campos tenham que ser digitados
             if (!nomeEvento || !categoriaEvento || !cidadeEvento || !horarioEvento || !descricaoEvento) {
                 alert("Todos os campos devem ser preenchidos!");
                 return;
