@@ -125,12 +125,12 @@
 
                     <div class="input-box">
                         <label for="title">Evento</label>
-                       <input id="title" type="title" nome="texte" placeholder="Evento que participará" required>
+                       <input id="evento" type="title" nome="texte" placeholder="Evento que participará" required>
                    </div>
 
                    <div class="input-box">
                     <label for="title">Projeto</label>
-                   <input id="title" type="title" nome="texte" placeholder="Projeto que participará" required>
+                   <input id="projeto" type="title" nome="texte" placeholder="Projeto que participará" required>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,8 @@
     <script>
         const btnCadastrarVoluntario = document.getElementById('cadastrarVoluntario')
 
-        btnCadastrarVoluntario.addEventListener('click', function(){
+        btnCadastrarVoluntario.addEventListener('click', function(event){
+            event.preventDefault()
             const nomeVoluntario = document.getElementById('fullnome').value
             const emailVoluntario = document.getElementById('email').value
             const telefoneVoluntario = document.getElementById('number').value
@@ -156,6 +157,12 @@
             const cidadeVoluntario = document.getElementById('city').value
             const eventoVoluntario = document.getElementById('evento').value
             const projetoVoluntario = document.getElementById('projeto').value
+
+            //Garante que todos o campos tenham que ser digitados
+            if (!nomeVoluntario || !emailVoluntario || !telefoneVoluntario || !estadoVoluntario || !cidadeVoluntario || !eventoVoluntario || !projetoVoluntario) {
+                alert("Todos os campos devem ser preenchidos!");
+                return;
+            }
 
             const dadosVoluntario ={
                 nomeVoluntario,
@@ -177,6 +184,7 @@
             .then(response => response.json())
             .then(data =>{
                 console.log('Voluntario Cadastrado com sucesso:', data)
+                alert("Evento Cadastrado com Sucesso")
             })
             .catch(error=> console.log('Erro ao cadastrar voluntario:', error))
         })

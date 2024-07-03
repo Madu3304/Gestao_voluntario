@@ -173,19 +173,44 @@
 
 
 <script>
-        document.getElementById('redirecionarHome').addEventListener('click', function(){
-            window.location.href = '/home'
-        })
-        document.getElementById('redirecionarVoluntario').addEventListener('click', function(){
-            window.location.href = '/voluntario'
-        })
-        document.getElementById('redirecionarAgenda').addEventListener('click', function(){
-            window.location.href = '/agenda'
-        })
-        document.getElementById('redirecionarEvento').addEventListener('click', function(){
-            window.location.href = '/evento'
-        })
-        document.getElementById('redirecionarEstatistica').addEventListener('click', function(){
-            window.location.href = '/estatistica'
-        })
+    // async function checkAuth() {
+    //     const token = localStorage.getItem('token');
+    //     if (!token) {
+    //         alert('Você não está autenticado!');
+    //         window.location.href = '/login';
+    //         return;
+    //     }
+
+    //     const response = await fetch('/home', {
+    //         method: 'GET',
+    //         headers: {
+    //             'Authorization': 'Bearer ' + token,
+    //             'Content-Type:': 'application/json'
+    //         }
+    //     });
+
+    //     if (!response.ok) {
+    //         alert('Sessão expirada ou inválida. Faça login novamente.');
+    //         localStorage.removeItem('token');
+    //         window.location.href = '/login';
+    //     }
+    // }
+
+    // window.onload = checkAuth();
+
+    document.getElementById('redirecionarHome').addEventListener('click', function(){
+        window.location.href = '/home'
+    });
+    document.getElementById('redirecionarVoluntario').addEventListener('click', function(){
+        window.location.href = '/voluntario'
+    });
+    document.getElementById('redirecionarAgenda').addEventListener('click', function(){
+        window.location.href = '/agenda'
+    });
+    document.getElementById('redirecionarEvento').addEventListener('click', function(){
+        window.location.href = '/evento'
+    });
+    document.getElementById('redirecionarEstatistica').addEventListener('click', function(){
+        window.location.href = '/estatistica'
+    });
 </script>
