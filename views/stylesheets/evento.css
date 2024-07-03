@@ -9,7 +9,7 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: #ebeaea;
+    background-color: #fff;
 }
 
 #sidebar {
@@ -171,13 +171,14 @@ body {
 }
 
 .form {
-  width: 100%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
-  padding: 20rem;
+  /* background-color: #fff; */
+  padding: 20vh;
+  margin-left: 40vh;
 }
 
 .form-header h1::after {
@@ -186,7 +187,6 @@ body {
   width: 5rem;
   height: 0.3rem;
   background-color: #dd8808;
-  /* margin:  auto; */
   position: absolute;
   border-radius: 10px;
 }

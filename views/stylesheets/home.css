@@ -116,7 +116,7 @@ body {
 #open_btn {
     position: absolute;
     top: 30px;
-    right: -10px;
+    right: -10px; 
     background-color: #ffdb49;
     color: #e3e9f7;
     border-radius: 100%;
