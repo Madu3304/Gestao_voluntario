@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/estatistica.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/script/services/estatisticaService.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <title>Estatística</title>
 </head>
 
@@ -83,9 +84,8 @@
                 </span>
             </button>
         </div>
-        
-    </nav>
 
+    </nav>
 
     <main>
         <div class="title-bg">
@@ -148,7 +148,7 @@
                         </div>
                         <div class="count-item">
                             <div id="count-price">
-                                R$ 
+                                R$
                                 <span id="count-value">
                                     200
                                 </span>
@@ -163,19 +163,57 @@
                 <div class="wrapper">
 
                     <!-- gráfico de barras -->
-                    <div class="graph-bg">
-                        <p class="graph-title">
-                            Arrecadação por Mês
-                        </p>
-                        <div class="graph-wrapper">
-                            <p class="graph-qt">
-                                Quantidade
-                            </p>
-                            <div class="graph">
-                                 <!--lógica do gráfico -->
-                            </div>
+                    <section class="graph">
+                        <div class="graphItem">
+                          <canvas id="barChart" style="width: 800px"></canvas>
                         </div>
-                    </div>
+                      </section>
+                      
+                      <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                          const data = [
+                            { title: 'Page A', acessos: '200' },
+                          ];
+                        
+                          const graphData = data.map(item => ({
+                            label: item.title,
+                            value: Number(item.acessos),
+                          }));
+                        
+                          const total = graphData.reduce((acc, item) => acc + item.value, 0);                        
+                          const barCtx = document.getElementById('barChart').getContext('2d');
+                        
+                          new Chart(barCtx, {
+                            type: 'bar',
+                            data: {
+                              labels: graphData.map(item => item.label),
+                              datasets: [{
+                                label: 'Acessos',
+                                data: graphData.map(item => item.value),
+                                backgroundColor: '#36a2eb',
+                                borderColor: '#36a2eb',
+                                borderWidth: 1,
+                              }],
+                            },
+                            options: {
+                              responsive: true,
+                              plugins: {
+                                legend: {
+                                  display: false,
+                                },
+                              },
+                              scales: {
+                                x: {
+                                  beginAtZero: true,
+                                },
+                                y: {
+                                  beginAtZero: true,
+                                },
+                              },
+                            },
+                          });
+                        });
+                        </script>
 
                     <!-- ranking -->
                     <div class="ranking-bg">
@@ -234,4 +272,5 @@
         window.location.href = '/estatistica'
     })
 </script>
+
 </html>

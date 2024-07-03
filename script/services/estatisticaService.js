@@ -1,6 +1,6 @@
 // url
 
-const url = 'localhost:8080/api/';
+const url = 'localhost:8080/api';
 let resource = '';
 
 let uri = `${URL}+${resource}`;
@@ -9,7 +9,7 @@ let uri = `${URL}+${resource}`;
 // qt de eventos
 async function getQuantidadeEvento() {
     
-    resource = ''
+    resource = '/estatistica/eventos';
     try {
         const res = await fetch(uri);
 

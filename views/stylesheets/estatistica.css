@@ -276,11 +276,21 @@ graph
 */
 
 .wrapper {
-  width: 98%;
+  /* Deletar */
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+}
+
+.graph {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-right: 2%;
+  justify-self: center;
+  align-self: center;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /*
@@ -290,14 +300,12 @@ ranking
 */
 
 .ranking-bg {
-  width: 25%;
+  width: 100%;
 }
 
 .ranking {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 70%;
+  gap: 6rem;
 }
 
 #colaborador-image img{
@@ -308,7 +316,6 @@ ranking
 }
 
 .colaborador-grid {
-  display: grid;
   text-align: center;
   padding: auto;
   margin-top: 2rem;
@@ -320,34 +327,4 @@ ranking
 
 .flex-container .ranking-title {
   font-size: 24px;
-}
-
-.graph-bg {
-  width: 50%;
-}
-
-.graph-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 3rem;
-}
-
-.graph-wrapper .graph-qt {
-  height: 2vh;
-  width: 2vh;
-  font-size: 14px;
-  transform: rotate(-90deg) translateX(-25px);
-}
-
-.graph-title {
-  font-size: 24px;
-}
-
-.graph {
-  width: 100%;
-  object-fit: cover;
-  height: 24vh;
-  background-color: #D9D9D9;
-  margin-bottom: 2rem;
 }
