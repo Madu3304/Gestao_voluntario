@@ -16,5 +16,8 @@ Para instalar o aplicativo, siga estas etapas:
 
 Para iniciar o aplicativo, siga estas etapas:
 
-1. No diretório do projeto, execute: `npm start`
-2. Abra seu navegador e visite: `http://localhost:8080`
+1. Vá no seu gerenciador de Banco de dados (XAMPP, MYSQL WORKBENCH, DBEAVER)
+2. Crie o banco de dados com o nome `gestao_voluntarios`
+3. No diretório do projeto, execute: `npm start`
+4. Abra seu navegador e visite: `http://localhost:8080/login`
+5. Coloque o login: `passatempo` e a senha `123`

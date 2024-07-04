@@ -162,45 +162,24 @@
                     <div class="count">
                         <div class="count-item">
                             <div class="count-value">
-                                0
+                                100
                             </div>
                             <p>Quantidade de Eventos</p>
                         </div>
                         <div class="count-item">
                             <div class="count-value">
-                                0
+                                1000
                             </div>
                             <p>Quantidade de Voluntarios</p>
                         </div>
                         <div class="count-item">
                             <div class="count-price">
-                                R$<span class="count-value">0</span>
+                                R$<span class="count-value" id="quantia-valor">1000</span>
                             </div>
                             <p>Quantidade Arrecadada</p>
                         </div>
                     </div>
                 </div>
-                <script>
-
-                    // anime.js animation
-
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const countValues = document.querySelectorAll('.count-value');
-                        countValues.forEach(element => {
-                            const value = element.innerHTML;
-                            anime({
-                                targets: element,
-                                innerHTML: [0, value],
-                                round: 1,
-                                easing: 'easeInOutExpo',
-                                update: function (anim) {
-                                    element.innerHTML = Math.round(anim.animations[0].currentValue);
-                                }
-                            });
-                        });
-                    });
-
-                </script>
 
                 <div class="wrapper">
 
@@ -213,8 +192,12 @@
 
                     <script>
                         document.addEventListener('DOMContentLoaded', () => {
+
+                            let quantiaValue = document.getElementById('quantia-valor').innerText;
+                            console.log(quantiaValue);
+
                             const data = [
-                                { title: 'Quantia Arrecada', quantia: '0' },
+                                { title: 'Quantia Arrecada', quantia: quantiaValue, },
                             ];
 
                             const graphData = data.map(item => ({
@@ -255,6 +238,25 @@
                                 },
                             });
                         });
+                    </script>
+                    <script>
+                        // anime.js animation
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const countValues = document.querySelectorAll('.count-value');
+                        countValues.forEach(element => {
+                            const value = element.innerHTML;
+                            anime({
+                                targets: element,
+                                innerHTML: [0, value],
+                                round: 1,
+                                easing: 'easeInOutExpo',
+                                update: function (anim) {
+                                    element.innerHTML = Math.round(anim.animations[0].currentValue);
+                                }
+                            });
+                        });
+                    });
                     </script>
 
                     <!-- ranking -->
