@@ -100,33 +100,62 @@
                 <!-- filtros -->
                 <div class="filter">
                     <div class="filter-option">
-                        <p>
-                            Cidade/Estado
-                        </p>
-                        <select name="cidade-estado">
+                        <p>Cidade/Estado</p>
+                        <select name="cidade-estado" id="cidadeEstadoSelect">
                             <option value="Todos">Todos</option>
-                            <!-- incluir um fetch(GET) para o restante -->
                         </select>
                     </div>
                     <div class="filter-option">
-                        <p>
-                            Categoria
-                        </p>
-                        <select name="categoria">
+                        <p>Categoria</p>
+                        <select name="categoria" id="categoriaSelect">
                             <option value="Todos">Todos</option>
-                            <!-- incluir um fetch(GET) para o restante -->
                         </select>
                     </div>
                     <div class="filter-option">
-                        <p>
-                            Colaborador
-                        </p>
-                        <select name="colaborador">
+                        <p>Colaborador</p>
+                        <select name="colaborador" id="colaboradorSelect">
                             <option value="Todos">Todos</option>
-                            <!-- incluir um fetch(GET) para o restante -->
                         </select>
                     </div>
                 </div>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+
+                        const cidadeEstadoApiUrl = '/api/cidades-estados';
+                        const categoriaApiUrl = '/api/categorias';
+                        const colaboradorApiUrl = '/api/colaboradores';
+
+                        const cidadeEstadoSelect = document.getElementById('cidadeEstadoSelect');
+                        const categoriaSelect = document.getElementById('categoriaSelect');
+                        const colaboradorSelect = document.getElementById('colaboradorSelect');
+
+                        async function fetchData(apiUrl, selectElement) {
+                            try {
+                                const response = await fetch(apiUrl);
+                                if (!response.ok) {
+                                    throw new Error('Erro ao buscar dados da API');
+                                }
+                                const data = await response.json();
+                                populateSelect(data, selectElement);
+                            } catch (error) {
+                                console.error('Erro:', error);
+                            }
+                        }
+
+                        function populateSelect(data, selectElement) {
+                            data.forEach(item => {
+                                const option = document.createElement('option');
+                                option.value = item.id;
+                                option.textContent = item.nome;
+                                selectElement.appendChild(option);
+                            });
+                        }
+
+                        fetchData(cidadeEstadoApiUrl, cidadeEstadoSelect);
+                        fetchData(categoriaApiUrl, categoriaSelect);
+                        fetchData(colaboradorApiUrl, colaboradorSelect);
+                    });
+                </script>
 
                 <!-- contadores -->
                 <div class="count-bg">
@@ -152,7 +181,7 @@
                     </div>
                 </div>
                 <script>
-                    
+
                     // anime.js animation
 
                     document.addEventListener('DOMContentLoaded', () => {
