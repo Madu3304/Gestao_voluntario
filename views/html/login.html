@@ -10,7 +10,7 @@
 <body>
 
     <div id="form">
-        <form action="/login" method="POST">
+        <form id="loginForm">
             <h2 class="title"> Login</h2>
 
             <label for="login">Login</label>
@@ -34,43 +34,39 @@
 </body>
 
 <script>
-    const botaoLogin = document.getElementById('botaoLogin')
+    document.getElementById('loginForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); // Previne o envio padrão do formulário
 
-    botaoLogin.addEventListener('click', function(event){
-        // event.preventDefault()
+        const user = document.getElementById('user').value;
+        const pwd = document.getElementById('pwd').value;
 
-        const user = document.getElementById('user').value
-        const pwd = document.getElementById('pwd').value
+        const dadosLogin = { user, pwd };
 
-        const dadosLogin = {
-            user,
-            pwd
-        }
+        try {
+            const response = await fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dadosLogin)
+            });
 
-        fetch('/login',{
-            method: 'POST',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(dadosLogin)
-        })
-        .then(response => {
-            if(!response.ok){
-                throw new Error('Credencias inválidas')
+            if (!response.ok) {
+                throw new Error('Credenciais inválidas');
             }
-            return response.json()
-        })
-        .then(data => {
-        if (data.token) {
-            // Salve o token no localStorage ou cookie
-            localStorage.setItem('token', data.token);
-            // Redirecione para a URL retornada
-            window.location.href = data.redirectUrl;
-        }
-    })
-        .catch(error=> console.error('Erro ao tentar logar:',error))
-    })
 
+            const data = await response.json();
+
+            if (data.token) {
+                localStorage.setItem('token', data.token); // Armazena o token no localStorage
+                window.location.href = data.redirectUrl; // Redireciona para a URL retornada
+                console.log(localStorage.getItem('token'))
+            }
+        } catch (error) {
+            console.error('Erro ao tentar logar:', error);
+            alert('Credenciais inválidas. Por favor, tente novamente.');
+        }
+    });
 </script>
 
 </html>
