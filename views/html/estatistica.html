@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="../stylesheets/estatistica.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="/script/services/estatisticaService.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="/script/services/estatisticaService.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
     <title>Estatística</title>
 </head>
 
@@ -45,7 +46,7 @@
 
                 <li class="side-item">
                     <a id="redirecionarAgenda">
-                        <i class="fa-regular fa-calendar-days"></i>
+                        <i class="fa-regular fa-calendar"></i>
                         <span class="item-description">
                             Agenda
                         </span>
@@ -131,89 +132,101 @@
                 <div class="count-bg">
                     <div class="count">
                         <div class="count-item">
-                            <div id="count-value">
-                                5
+                            <div class="count-value">
+                                0
                             </div>
-                            <p>
-                                Quantidade de Eventos
-                            </p>
+                            <p>Quantidade de Eventos</p>
                         </div>
                         <div class="count-item">
-                            <div id="count-value">
-                                12
+                            <div class="count-value">
+                                0
                             </div>
-                            <p>
-                                Quantidade de Voluntarios
-                            </p>
+                            <p>Quantidade de Voluntarios</p>
                         </div>
                         <div class="count-item">
-                            <div id="count-price">
-                                R$
-                                <span id="count-value">
-                                    200
-                                </span>
+                            <div class="count-price">
+                                R$<span class="count-value">0</span>
                             </div>
-                            <p>
-                                Quantidade Arrecadada
-                            </p>
+                            <p>Quantidade Arrecadada</p>
                         </div>
                     </div>
                 </div>
+                <script>
+                    
+                    // anime.js animation
+
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const countValues = document.querySelectorAll('.count-value');
+                        countValues.forEach(element => {
+                            const value = element.innerHTML;
+                            anime({
+                                targets: element,
+                                innerHTML: [0, value],
+                                round: 1,
+                                easing: 'easeInOutExpo',
+                                update: function (anim) {
+                                    element.innerHTML = Math.round(anim.animations[0].currentValue);
+                                }
+                            });
+                        });
+                    });
+
+                </script>
 
                 <div class="wrapper">
 
                     <!-- gráfico de barras -->
                     <section class="graph">
                         <div class="graphItem">
-                          <canvas id="barChart" style="width: 800px"></canvas>
+                            <canvas id="barChart" style="width: 800px"></canvas>
                         </div>
-                      </section>
-                      
-                      <script>
+                    </section>
+
+                    <script>
                         document.addEventListener('DOMContentLoaded', () => {
-                          const data = [
-                            { title: 'Page A', acessos: '200' },
-                          ];
-                        
-                          const graphData = data.map(item => ({
-                            label: item.title,
-                            value: Number(item.acessos),
-                          }));
-                        
-                          const total = graphData.reduce((acc, item) => acc + item.value, 0);                        
-                          const barCtx = document.getElementById('barChart').getContext('2d');
-                        
-                          new Chart(barCtx, {
-                            type: 'bar',
-                            data: {
-                              labels: graphData.map(item => item.label),
-                              datasets: [{
-                                label: 'Acessos',
-                                data: graphData.map(item => item.value),
-                                backgroundColor: '#36a2eb',
-                                borderColor: '#36a2eb',
-                                borderWidth: 1,
-                              }],
-                            },
-                            options: {
-                              responsive: true,
-                              plugins: {
-                                legend: {
-                                  display: false,
+                            const data = [
+                                { title: 'Quantia Arrecada', quantia: '0' },
+                            ];
+
+                            const graphData = data.map(item => ({
+                                label: item.title,
+                                value: Number(item.quantia),
+                            }));
+
+                            const total = graphData.reduce((acc, item) => acc + item.value, 0);
+                            const barCtx = document.getElementById('barChart').getContext('2d');
+
+                            new Chart(barCtx, {
+                                type: 'bar',
+                                data: {
+                                    labels: graphData.map(item => item.label),
+                                    datasets: [{
+                                        label: 'Quantia: ',
+                                        data: graphData.map(item => item.value),
+                                        backgroundColor: '#36a2eb',
+                                        borderColor: '#36a2eb',
+                                        borderWidth: 1,
+                                    }],
                                 },
-                              },
-                              scales: {
-                                x: {
-                                  beginAtZero: true,
+                                options: {
+                                    responsive: true,
+                                    plugins: {
+                                        legend: {
+                                            display: false,
+                                        },
+                                    },
+                                    scales: {
+                                        x: {
+                                            beginAtZero: true,
+                                        },
+                                        y: {
+                                            beginAtZero: true,
+                                        },
+                                    },
                                 },
-                                y: {
-                                  beginAtZero: true,
-                                },
-                              },
-                            },
-                          });
+                            });
                         });
-                        </script>
+                    </script>
 
                     <!-- ranking -->
                     <div class="ranking-bg">
@@ -254,7 +267,6 @@
         </div>
     </main>
 </body>
-
 <script>
     document.getElementById('redirecionarHome').addEventListener('click', function () {
         window.location.href = '/home'
@@ -271,9 +283,9 @@
     document.getElementById('redirecionarEstatistica').addEventListener('click', function () {
         window.location.href = '/estatistica'
     })
-    document.getElementById('logout').addEventListener('click', function(){
-            window.location.href = '/login'
-        })
+    document.getElementById('logout').addEventListener('click', function () {
+        window.location.href = '/login'
+    })
 </script>
 
 </html>
