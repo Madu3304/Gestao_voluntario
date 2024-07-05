@@ -159,5 +159,94 @@ body {
 }
  
 
-/*ali é do menu do lado*/
-/*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+.agenda-container {
+    width: 100%;
+}
+
+.agenda-month {
+    display: flex;
+    margin-top: 80px;
+    gap: 36px;
+}
+
+.agenda-month button {
+    border: none;
+    background: none;
+}
+
+.agenda-header {
+    margin-left: 80px;
+}
+
+.agenda-month {
+    padding: 24px;
+}
+
+.agenda-days ul li {
+    list-style: none;
+}
+
+.agenda-days ul {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.agenda-dates {
+    margin-left: 80px;
+}
+
+.agenda-days ul{
+    list-style: none;
+}
+
+.agenda-days ul {
+    display: flex;
+    margin-top: 60px;
+    gap: 56px;
+    user-select: none;
+}
+
+.agenda-days ul li {
+    padding: 6px;
+    border-bottom: 2px solid #ffdb49;
+}
+
+.agenda-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.agenda-dates .day-wrap{
+    text-align: center;
+    width: 210px;
+}
+
+.empty {
+    background: #eee;
+    height: auto;
+}
+
+.day-number {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.selected {
+    background: rgba(231, 231, 231, 0.877);
+}
+
+.events {
+    font-size: 0.8em;
+    opacity: .6;
+}
+
+.agenda-dates {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 28px;
+}

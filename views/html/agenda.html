@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/agenda.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Agenda</title>
 </head>
+
 <body>
     <nav id="sidebar">
         <div id="sidebar_content">
             <div id="user">
                 <img src="../imagens/logoBordaBrancatransparente.png" id="user_logo" alt="Logo">
                 <!-- <img src="../public/imagens/logoBordaBrancatransparente.png" id="user_logo" alt="Logo"> -->
-    
+
                 <p id="user_infos">
                     <span class="item-description">
                         Passa Tempo
                     </span>
                 </p>
             </div>
-    
-            <ul id="side_items">
+
+            <ul id="side-items">
                 <li class="side-item active">
                     <a id="redirecionarHome">
-                    <!-- <a href="home.html"> -->
+                        <!-- <a href="home.html"> -->
                         <i class="fa-solid fa-house"></i>
                         <span class="item-description">
                             Home
                         </span>
                     </a>
                 </li>
-    
+
                 <li class="side-item">
                     <a id="redirecionarVoluntario">
-                    <!-- <a href="voluntario.html"> -->
+                        <!-- <a href="voluntario.html"> -->
                         <i class="fa-solid fa-user"></i>
                         <span class="item-description">
                             Voluntários
                         </span>
                     </a>
                 </li>
-    
+
                 <li class="side-item">
                     <a id="redirecionarAgenda">
-                    <!-- <a href="agenda.html"> -->
+                        <!-- <a href="agenda.html"> -->
                         <i class="fa-regular fa-calendar-days"></i>
                         <span class="item-description">
                             Agenda
                         </span>
                     </a>
                 </li>
-    
+
                 <li class="side-item">
                     <a id="redirecionarEvento">
-                    <!-- <a href="evento.html"> -->
+                        <!-- <a href="evento.html"> -->
                         <i class="fa-solid fa-file-pen"></i>
                         <span class="item-description">
                             Evento
                         </span>
                     </a>
                 </li>
-     
+
                 <li class="side-item">
                     <a id="redirecionarEstatistica">
-                    <!-- <a href="estatistica.html"> -->
+                        <!-- <a href="estatistica.html"> -->
                         <i class="fa-solid fa-chart-line"></i>
                         <span class="item-description">
                             Gráficos
@@ -72,14 +75,14 @@
                     </a>
                 </li>
             </ul>
-    
-            <button id="open_btn">
-                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+
+            <button id="open-btn">
+                <i id="open-btn-icon" class="fa-solid fa-chevron-right"></i>
             </button>
         </div>
 
         <div id="logout">
-            <button id="logout_btn">
+            <button id="logout-btn">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="item-description">
                     Logout
@@ -87,26 +90,149 @@
             </button>
         </div>
     </nav>
+    <main>
+        <div class="agenda-container">
+            <div class="agenda-bg">
 
+                <div class="agenda-header">
+
+                    <div class="agenda-month">
+                        <button onclick="getMonth('previous')">&#9664;</button>
+                        <h1 id="monthTitle">Mês</h1>
+                        <button onclick="getMonth('next')">&#9654;</button>
+                    </div>
+
+                    <div class="agenda-days">
+                        <ul>
+                            <li>
+                                <p>Segunda</p>
+                            </li>
+                            <li>
+                                <p>Terça</p>
+                            </li>
+                            <li>
+                                <p>Quarta</p>
+                            </li>
+                            <li>
+                                <p>Quinta</p>
+                            </li>
+                            <li>
+                                <p>Sexta</p>
+                            </li>
+                            <li>
+                                <p>Sábado</p>
+                            </li>
+                            <li>
+                                <p>Domingo</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="agenda-dates" id="agendaDates"></div>
+            </div>
+            <script defer>
+                const month = ["Janeiro",
+                    "Fevereiro",
+                    "Março",
+                    "Abril",
+                    "Maio",
+                    "Junho",
+                    "Julho",
+                    "Agosto",
+                    "Setembro",
+                    "Outubro",
+                    "Novembro",
+                    "Dezembro"];
+
+                let date = new Date();
+                let currentYear = date.getFullYear();
+                let currentMonth = date.getMonth();
+
+                const updateMonthTitle = () => {
+                    document.getElementById('monthTitle').innerText = `${month[currentMonth]} ${currentYear}`;
+                }
+
+                const getMonth = (direction) => {
+                    if (direction === 'next') {
+                        currentMonth = (currentMonth + 1) % 12;
+                        if (currentMonth === 0) currentYear++;
+                    } else if (direction === 'previous') {
+                        currentMonth = (currentMonth - 1 + 12) % 12;
+                        if (currentMonth === 11) currentYear--;
+                    }
+                    updateMonthTitle();
+                    renderCalendar(currentMonth, currentYear);
+                }
+
+                const renderCalendar = (month, year) => {
+                    const agendaDates = document.getElementById('agendaDates');
+                    agendaDates.innerHTML = '';
+
+                    const firstDay = new Date(year, month, 0).getDay();
+                    const lastDay = new Date(year, month + 1, 0).getDate();
+
+                    for (let i = 0; i < firstDay; i++) {
+                        const emptyCell = document.createElement('div');
+                        emptyCell.classList.add('empty');
+                        agendaDates.appendChild(emptyCell);
+                    }
+
+                    const savedEvents = JSON.parse(localStorage.getItem('events') || '{}');
+
+                    for (let date = 1; date <= lastDay; date++) {
+                        const dateCell = document.createElement('div');
+                        dateCell.classList.add('day-wrap');
+                        dateCell.innerHTML = `<div class="day-number">${date}</div><div class="events">${savedEvents[date] || ''}</div>`;
+
+                        if (savedEvents[date]) {
+                            dateCell.classList.add('selected');
+                        }
+
+                        dateCell.addEventListener('click', () => {
+                            dateCell.classList.toggle('selected');
+                            const eventText = prompt("Digite um evento para este dia (deixe em branco para remover o evento):", savedEvents[date] || "");
+                            if (eventText !== null) {
+                                if (eventText.trim() === "") {
+                                    delete savedEvents[date];
+                                } else {
+                                    savedEvents[date] = eventText;
+                                }
+                                localStorage.setItem('events', JSON.stringify(savedEvents));
+                                renderCalendar(currentMonth, currentYear);
+                            }
+                        });
+
+                        agendaDates.appendChild(dateCell);
+                    }
+                }
+
+                updateMonthTitle();
+                renderCalendar(currentMonth, currentYear);
+            </script>
+        </div>
+    </main>
 </body>
+
 <script>
-    document.getElementById('redirecionarHome').addEventListener('click', function(){
+    document.getElementById('redirecionarHome').addEventListener('click', function () {
         window.location.href = '/home'
     })
-    document.getElementById('redirecionarVoluntario').addEventListener('click', function(){
+    document.getElementById('redirecionarVoluntario').addEventListener('click', function () {
         window.location.href = '/voluntario'
     })
-    document.getElementById('redirecionarAgenda').addEventListener('click', function(){
+    document.getElementById('redirecionarAgenda').addEventListener('click', function () {
         window.location.href = '/agenda'
     })
-    document.getElementById('redirecionarEvento').addEventListener('click', function(){
+    document.getElementById('redirecionarEvento').addEventListener('click', function () {
         window.location.href = '/evento'
     })
-    document.getElementById('redirecionarEstatistica').addEventListener('click', function(){
+    document.getElementById('redirecionarEstatistica').addEventListener('click', function () {
         window.location.href = '/estatistica'
     })
-    document.getElementById('logout').addEventListener('click', function(){
-            window.location.href = '/login'
-        })
+    document.getElementById('logout').addEventListener('click', function () {
+        window.location.href = '/login'
+    })
 </script>
+
 </html>
