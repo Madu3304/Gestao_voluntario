@@ -21,3 +21,7 @@ Para iniciar o aplicativo, siga estas etapas:
 3. No diretório do projeto, execute: `npm start`
 4. Abra seu navegador e visite: `http://localhost:8080/login`
 5. Coloque o login: `passatempo` e a senha `123`
+
+## Observações
+
+1. A tela de cancelamento é acessada por um link enviado no email de cada voluntario registrado
