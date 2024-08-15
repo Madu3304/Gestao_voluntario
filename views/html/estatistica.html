@@ -112,12 +112,16 @@
                         </select>
                     </div>
                     <div class="filter-option">
-                        <p>Colaborador</p>
-                        <select name="colaborador" id="colaboradorSelect">
+                        <p>Voluntario</p>
+                        <select name="Voluntario" id="VoluntarioSelect">
                             <option value="Todos">Todos</option>
                         </select>
                     </div>
+                
+                    <link rel="script" href="../script/scri.js"> 
                 </div>
+                
+
                 <script>
                     document.addEventListener("DOMContentLoaded", function () {
 
@@ -181,121 +185,21 @@
                     </div>
                 </div>
 
-                <div class="wrapper">
+               
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-                    <!-- gráfico de barras -->
-                    <section class="graph">
-                        <div class="graphItem">
-                            <canvas id="barChart" style="width: 800px"></canvas>
-                        </div>
-                    </section>
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        Gráfico demonstrativo
+    </p>
+</figure>
 
-                    <script>
-                        document.addEventListener('DOMContentLoaded', () => {
 
-                            let quantiaValue = document.getElementById('quantia-valor').innerText;
-                            console.log(quantiaValue);
-
-                            const data = [
-                                { title: 'Quantia Arrecada', quantia: quantiaValue, },
-                            ];
-
-                            const graphData = data.map(item => ({
-                                label: item.title,
-                                value: Number(item.quantia),
-                            }));
-
-                            const total = graphData.reduce((acc, item) => acc + item.value, 0);
-                            const barCtx = document.getElementById('barChart').getContext('2d');
-
-                            new Chart(barCtx, {
-                                type: 'bar',
-                                data: {
-                                    labels: graphData.map(item => item.label),
-                                    datasets: [{
-                                        label: 'Quantia: ',
-                                        data: graphData.map(item => item.value),
-                                        backgroundColor: '#36a2eb',
-                                        borderColor: '#36a2eb',
-                                        borderWidth: 1,
-                                    }],
-                                },
-                                options: {
-                                    responsive: true,
-                                    plugins: {
-                                        legend: {
-                                            display: false,
-                                        },
-                                    },
-                                    scales: {
-                                        x: {
-                                            beginAtZero: true,
-                                        },
-                                        y: {
-                                            beginAtZero: true,
-                                        },
-                                    },
-                                },
-                            });
-                        });
-                    </script>
-                    <script>
-                        // anime.js animation
-
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const countValues = document.querySelectorAll('.count-value');
-                        countValues.forEach(element => {
-                            const value = element.innerHTML;
-                            anime({
-                                targets: element,
-                                innerHTML: [0, value],
-                                round: 1,
-                                easing: 'easeInOutExpo',
-                                update: function (anim) {
-                                    element.innerHTML = Math.round(anim.animations[0].currentValue);
-                                }
-                            });
-                        });
-                    });
-                    </script>
-
-                    <!-- ranking -->
-                    <div class="ranking-bg">
-                        <div class="flex-container">
-                            <p class="ranking-title">
-                                Top Contribuidores
-                            </p>
-                            <div class="ranking">
-                                <div class="colaborador-1 colaborador-grid">
-                                    <div id="colaborador-image">
-                                        <img src="/views/imagens/user.png" />
-                                    </div>
-                                    <p id="colaborador-name-1">
-                                        Colaborador 1
-                                    </p>
-                                </div>
-                                <div class="colaborador-2 colaborador-grid">
-                                    <div id="colaborador-image">
-                                        <img src="/views/imagens/user.png" />
-                                    </div>
-                                    <p id="colaborador-name-2">
-                                        Colaborador 2
-                                    </p>
-                                </div>
-                                <div class="colaborador-3 colaborador-grid">
-                                    <div id="colaborador-image">
-                                        <img src="/views/imagens/user.png" />
-                                    </div>
-                                    <p id="colaborador-name-3">
-                                        Colaborador 3
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                   
     </main>
 </body>
 <script>
