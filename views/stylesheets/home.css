@@ -161,57 +161,59 @@ body {
 
 /* Aqui é o home  */
 
-
-
-
-.form {
-    flex-direction: column;
-    top: 150%;
-    left: 150%;
-    transform: translate(-50%, -50%);
-    background: #fff;
-    border-radius: 10px;
-    padding: 60px;
-    margin-left: 100vh;
-    align-items: center;
-    color: #2b344b;
-    animation: iniciar 1.8s ease-out;
-    pointer-events: all;
-} 
-
-.item-container {
+body .depoimentos{
+    height: 100vh;
     display: flex;
     align-items: center;
-    margin: 30px 0;
+    justify-content: center;
 }
 
-.image {
-    border: 1px solid;
-    width: 23%;
-    /* margin-right: 20px; */
-    margin-left: 150px;
-}
-
-.input {
-    min-width: 1px;
-    border-radius: 10px;
-    border: 2px #6f7e8a solid;
-    padding: 40px;
-    height: 10vh;
-    margin-left: 30px;
-    width: 300px;
-}
-
-.input input {
+.depoimentos{
     width: 100%;
-    border: none;
-    outline: none;
-    font-family: ubuntu;
-    color: #2b344b;
-    font-size: 11pt;
+    padding: 50px 20px;
+
+    max-width: 900px;
+    position: relative;
+
+    overflow: hidden;
+}
+
+.depoimentos .slide{
+    padding: 40px 60px; 
+    cursor: grab;
+}
+
+.depoimentos .slide{
+    cursor: grabbing;
+}
+
+.depoimentos i{
+    font-size: 90%;
+    color: #dfdfdf;
+}
+
+.depoimentos p.depoi-txt{
+    font-weight: 300;
+    margin-bottom :20px
+}
+
+
+.slide .person{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 
 }
 
+.slide .person img{
+    width: 80px;
+    height: 80px;
+}
+
+.slide .person p.name-person{
+    font-size: 20px;
+    font-weight: 600;
+}
 
 
 @keyframes iniciar {

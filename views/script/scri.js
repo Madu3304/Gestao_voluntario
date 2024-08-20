@@ -13,7 +13,7 @@ Highcharts.chart('container', {
         align: 'left'
     },
     xAxis: {
-        categories: ['USA', 'China', 'Brazil', 'EU', 'Argentina', 'India'],
+        categories: ['voluntario 1', 'voluntario 2', 'voluntario 3', 'voluntario 4', 'voluntario 5', 'voluntario 6'], 
         crosshair: true,
         accessibility: {
             description: 'Countries'

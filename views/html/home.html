@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <title>Home</title>
 </head>
 <body>
@@ -83,24 +86,78 @@
         </div>
     </nav>
 
+    <section class="depoimentos mySwiper">
 
-    <div id="form">
-        <form action="/home" method="POST">
-            <div class="item-container">
-                <img src="../imagens/foto2.png" class="image" alt="Recados">
-                <div class="input">
-                    <input id="user" name="user" placeholder="recados" type="text" required>
-                </div>
-            </div>
-            <div class="item-container">
-                <img src="../imagens/foto3.png" class="image" alt="Recados">
-                <div class="input">
-                    <input id="user" name="user" placeholder="recados" type="text" required>
-                </div>
-            </div>
-        </form>
-    </div>
+        <div class="depoimentos-containe swiper-wrapperr">
+        
+            <div class="slide swiper-slide">
+                <i class="bi bi-quote"></i>
+        
+                <p class="depoi-txt">
+                    No príoximo event começará ás 14horas e seguiremos este cronograma. 
+                    </p>
 
+                    <div class="person">
+                        <img src="../imagens/logo com borda branca.png" alt="">
+                        <div class="info-person">
+                            <p class="name-person">Passa Tempo</p>
+                    </div>
+                </div>     
+            </div> 
+            
+            <div class="slide swiper-slide">
+                <i class="bi bi-quote"></i>
+        
+                <p class="depoi-txt">
+                    No príoximo event começará ás 14horas e seguiremos este cronograma. 
+                    </p>
+
+                    <div class="person">
+                    <img src="../imagens/logo com borda branca.png" alt="">
+                    <div class="info-person">
+                        <p class="name-person">Passa Tempo</p>
+                    </div>
+                </div>     
+            </div>             
+
+            <div class="slide swiper-slide">
+                <i class="bi bi-quote"></i>
+        
+                <p class="depoi-txt">
+                    No príoximo event começará ás 14horas e seguiremos este cronograma. 
+                    </p>
+
+                    <div class="person">
+                    <img src="../imagens/logo com borda branca.png" alt="">
+                    <div class="info-person">
+                        <p class="name-person">Passa Tempo</p>
+                    </div>
+                </div>     
+            </div> 
+
+            <div class="slide swiper-slide">
+                <i class="bi bi-quote"></i>
+        
+                <p class="depoi-txt">
+                    No príoximo event começará ás 14horas e seguiremos este cronograma. 
+                    </p>
+
+                    <div class="person">
+                    <img src="../imagens/logo com borda branca.png" alt="">
+                    <div class="info-person">
+                        <p class="name-person">Passa Tempo</p>
+                    </div>
+                </div>     
+            </div> 
+         </div>
+
+         <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div>
+         <div class="swiper-pagination"></div>
+    </section>
+
+    <script src="../script/"></script>
+    <script src="../script/home.js"></script>
     <script src="script/script.js"></script>
 </body>
 

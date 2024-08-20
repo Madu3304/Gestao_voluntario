@@ -95,132 +95,18 @@
             </h1>
         </div>
         <div class="content-bg">
-            <div class="content">
-
-                <!-- filtros -->
-                <div class="filter">
-                    <div class="filter-option">
-                        <p>Cidade/Estado</p>
-                        <select name="cidade-estado" id="cidadeEstadoSelect">
-                            <option value="Todos">Todos</option>
-                        </select>
-                    </div>
-                    <div class="filter-option">
-                        <p>Categoria</p>
-                        <select name="categoria" id="categoriaSelect">
-                            <option value="Todos">Todos</option>
-                        </select>
-                    </div>
-                    <div class="filter-option">
-                        <p>Voluntario</p>
-                        <select name="Voluntario" id="VoluntarioSelect">
-                            <option value="Todos">Todos</option>
-                        </select>
-                    </div>
-                
-                    <link rel="script" href="../script/scri.js"> 
-                </div>
-                
-
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-
-                        const cidadeEstadoApiUrl = '/api/cidades-estados';
-                        const categoriaApiUrl = '/api/categorias';
-                        const colaboradorApiUrl = '/api/colaboradores';
-
-                        const cidadeEstadoSelect = document.getElementById('cidadeEstadoSelect');
-                        const categoriaSelect = document.getElementById('categoriaSelect');
-                        const colaboradorSelect = document.getElementById('colaboradorSelect');
-
-                        async function fetchData(apiUrl, selectElement) {
-                            try {
-                                const response = await fetch(apiUrl);
-                                if (!response.ok) {
-                                    throw new Error('Erro ao buscar dados da API');
-                                }
-                                const data = await response.json();
-                                populateSelect(data, selectElement);
-                            } catch (error) {
-                                console.error('Erro:', error);
-                            }
-                        }
-
-                        function populateSelect(data, selectElement) {
-                            data.forEach(item => {
-                                const option = document.createElement('option');
-                                option.value = item.id;
-                                option.textContent = item.nome;
-                                selectElement.appendChild(option);
-                            });
-                        }
-
-                        fetchData(cidadeEstadoApiUrl, cidadeEstadoSelect);
-                        fetchData(categoriaApiUrl, categoriaSelect);
-                        fetchData(colaboradorApiUrl, colaboradorSelect);
-                    });
-                </script>
-
-                <!-- contadores -->
-                <div class="count-bg">
-                    <div class="count">
-                        <div class="count-item">
-                            <div class="count-value">
-                                100
-                            </div>
-                            <p>Quantidade de Eventos</p>
-                        </div>
-                        <div class="count-item">
-                            <div class="count-value">
-                                1000
-                            </div>
-                            <p>Quantidade de Voluntarios</p>
-                        </div>
-                        <div class="count-item">
-                            <div class="count-price">
-                                R$<span class="count-value" id="quantia-valor">1000</span>
-                            </div>
-                            <p>Quantidade Arrecadada</p>
-                        </div>
-                    </div>
-                </div>
-
-               
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
-<figure class="highcharts-figure">
-    <div id="container"></div>
-    <p class="highcharts-description">
-        Gráfico demonstrativo
-    </p>
-</figure>
-
-
-                   
+            <div class="content"></div>
+        </div>   
     </main>
-</body>
-<script>
-    document.getElementById('redirecionarHome').addEventListener('click', function () {
-        window.location.href = '/home'
-    })
-    document.getElementById('redirecionarVoluntario').addEventListener('click', function () {
-        window.location.href = '/voluntario'
-    })
-    document.getElementById('redirecionarAgenda').addEventListener('click', function () {
-        window.location.href = '/agenda'
-    })
-    document.getElementById('redirecionarEvento').addEventListener('click', function () {
-        window.location.href = '/evento'
-    })
-    document.getElementById('redirecionarEstatistica').addEventListener('click', function () {
-        window.location.href = '/estatistica'
-    })
-    document.getElementById('logout').addEventListener('click', function () {
-        window.location.href = '/login'
-    })
-</script>
 
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <figure class="highcharts-figure">
+    <div id="container"></div>
+    
+</figure>
+                
 </html>
