@@ -159,10 +159,23 @@ body {
 }
 
 
+@keyframes iniciar {
+    0% {
+        top: -20%;
+        opacity: 0;
+        pointer-events: none;
+    }
+    100% {
+        top: 50%;
+        opacity: 100%;
+        pointer-events: all;
+    }
+}
+
 /* Aqui é o home  */
 
 body .depoimentos{
-    height: 100vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,19 +184,18 @@ body .depoimentos{
 .depoimentos{
     width: 100%;
     padding: 50px 20px;
-
-    max-width: 900px;
+    max-width: 800px;
     position: relative;
 
     overflow: hidden;
 }
 
 .depoimentos .slide{
-    padding: 40px 60px; 
+    padding: 150px 150px; 
     cursor: grab;
 }
 
-.depoimentos .slide{
+.depoimentos .slide:active{
     cursor: grabbing;
 }
 
@@ -194,7 +206,7 @@ body .depoimentos{
 
 .depoimentos p.depoi-txt{
     font-weight: 300;
-    margin-bottom :20px
+    margin-bottom :40px
 }
 
 
@@ -211,20 +223,14 @@ body .depoimentos{
 }
 
 .slide .person p.name-person{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
 }
 
-
-@keyframes iniciar {
-    0% {
-        top: -20%;
-        opacity: 0;
-        pointer-events: none;
-    }
-    100% {
-        top: 50%;
-        opacity: 100%;
-        pointer-events: all;
+@media screen and (max-width: 768px){
+    .nav-btn{
+        display: none;
     }
 }
+    
+
