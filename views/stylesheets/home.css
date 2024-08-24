@@ -181,15 +181,20 @@ body .depoimentos{
     justify-content: center;
 }
 
-
-.depoimentos{
+.centralizar{
+    align-items: center;
+}
+.depoimentos {
     width: 100%;
-    padding: 80px 20px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px;
     max-width: 700px;
     position: relative;
-
     overflow: hidden;
+    top: 20%;
+    transform: translateY(-50%); 
 }
+
 
 .depoimentos .slide{
     padding: 200px 100px; 
