@@ -1,5 +1,5 @@
 
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -72,7 +72,7 @@ body {
 
 .side-item:hover:not(.active),
 #logout_btn:hover {
-    background-color: #e3e9f7;
+    background-color: #f78820;
 }
 
 .side-item a {
@@ -116,7 +116,7 @@ body {
 #open_btn {
     position: absolute;
     top: 30px;
-    right: -10px;
+    right: -10px; 
     background-color: #ffdb49;
     color: #e3e9f7;
     border-radius: 100%;
@@ -145,7 +145,7 @@ body {
 }
 
 #sidebar.open-sidebar {
-    min-width: 15%;
+    min-width: 18%;
 }
 
 #sidebar.open-sidebar .item-description {
@@ -157,8 +157,23 @@ body {
     justify-content: flex-start;
     gap: 14px;
 }
- 
 
+
+@keyframes iniciar {
+    0% {
+        top: -20%;
+        opacity: 0;
+        pointer-events: none;
+    }
+    100% {
+        top: 50%;
+        opacity: 100%;
+        pointer-events: all;
+    }
+}
+
+
+/*   &&&&&& agenda &&&&&&&&&&&&*/
 .agenda-container {
     width: 100%;
 }

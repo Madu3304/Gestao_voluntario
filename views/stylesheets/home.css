@@ -8,7 +8,7 @@
 
 body {
     display: flex;
-    min-height: 100vh;
+    min-height: 100%;
     background-color: #fff;
 }
 
@@ -16,17 +16,21 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #fcd362;
+    background-color: #ffdb49;
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: relative;
     transition: all .5s;
     min-width: 82px;
     z-index: 2;
+    overflow: hidden;
 }
 
 #sidebar_content {
     padding: 12px;
+    max-width: 250px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 #user {
@@ -72,7 +76,7 @@ body {
 
 .side-item:hover:not(.active),
 #logout_btn:hover {
-    background-color: #e3e9f7;
+    background-color: #f78820;
 }
 
 .side-item a {
@@ -130,8 +134,9 @@ body {
     transition: transform .3s ease;
 }
 
+/* resolveu meu problema --- lindoooooo*/
 .open-sidebar #open_btn_icon {
-    transform: rotate(180deg);
+    transform: rotate(100deg);
 }
 
 .item-description {
@@ -145,7 +150,7 @@ body {
 }
 
 #sidebar.open-sidebar {
-    min-width: 15%;
+    min-width: 18%;
 }
 
 #sidebar.open-sidebar .item-description {
@@ -156,6 +161,11 @@ body {
 #sidebar.open-sidebar .side-item a {
     justify-content: flex-start;
     gap: 14px;
+}
+
+#sidebar{
+    min-width: 82px;
+    overflow: hidden;
 }
 
 
@@ -181,13 +191,11 @@ body .depoimentos{
     justify-content: center;
 }
 
-.centralizar{
-    align-items: center;
-}
+
 .depoimentos {
     width: 100%;
     margin: 0 auto; /* Centraliza horizontalmente */
-    padding: 20px;
+    /* padding: 20px; */
     max-width: 700px;
     position: relative;
     overflow: hidden;
@@ -234,6 +242,19 @@ body .depoimentos{
 }
     
 
+@media (max-width: 768px) {
+    .depoimentos .slide {
+        padding: 1rem;
+    }
+    .slide .person img {
+        width: 50px;
+        height: 50px;
+    }
+    .slide .person p.name-person {
+        font-size: 16px;
+    }
+}
+
 /* &&&&&&&&&&&&&&  texto no começo da tela  &&&&&&&&&&&&&& */
 
 .textos .container-text{
@@ -279,41 +300,3 @@ body .depoimentos{
 
 
 
-
-
-
-/* .container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 50px;
-    position: absolute;
-    left: 8; 
-    right: 0;
-}
-
-
-.card {
-    background-color: rgb(228, 226, 226);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 30%;
-} 
-
-.card i {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    font-size: 17px;
-    margin-bottom: 10px;
-}
-
-.card p {
-    font-size: 14px;
-    color: #666;
-} */
